@@ -12,7 +12,7 @@ import RxSwift
 
 class MoviesViewController: UIViewController {
     
-    let moviesViewModel: MoviesViewModel!
+    let moviesViewModel: MoviesViewModel
     var coordinator: MainCoordinator?
     var passData = PublishSubject<MovieResult>()
 
