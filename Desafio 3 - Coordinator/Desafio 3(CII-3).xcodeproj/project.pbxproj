@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330933CCA10496DEF8B609BE /* Pods_Desafio_3_CII_3_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8944B7E4AFBECA2E7B28FC4B /* Pods_Desafio_3_CII_3_Tests.framework */; };
 		3F5542CE22422A58415A9877 /* Pods_Desafio_3_CII_3_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2BE68F49EEC186407AB59D /* Pods_Desafio_3_CII_3_.framework */; };
 		548CCC6CA90EC094DCCB2F8F /* Pods_Desafio_3_CII_3__Desafio_3_CII_3_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BA99E30E844C55E5DA0BC /* Pods_Desafio_3_CII_3__Desafio_3_CII_3_UITests.framework */; };
 		7D00C862275A9C03000E0F3C /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D00C861275A9C03000E0F3C /* MoviesViewModel.swift */; };
@@ -16,9 +17,12 @@
 		7D67F639275E9EED00F5DC7F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67F638275E9EED00F5DC7F /* Coordinator.swift */; };
 		7D67F63B275E9F7E00F5DC7F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67F63A275E9F7E00F5DC7F /* Storyboarded.swift */; };
 		7D67F63D275EA14D00F5DC7F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67F63C275EA14D00F5DC7F /* MainCoordinator.swift */; };
+		7DAA5D3A276240C70041E6C8 /* APIModelFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA5D37276240C70041E6C8 /* APIModelFormatter.swift */; };
+		7DAA5D3B276240C70041E6C8 /* APIModelColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA5D38276240C70041E6C8 /* APIModelColorsTests.swift */; };
+		7DAA5D3C276240C70041E6C8 /* APIModelFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA5D39276240C70041E6C8 /* APIModelFunctionsTests.swift */; };
+		7DAA5D3F276240CF0041E6C8 /* StubedDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA5D3E276240CF0041E6C8 /* StubedDataTests.swift */; };
 		7DB90232275FDF8500703458 /* OverviewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB90231275FDF8500703458 /* OverviewCoordinator.swift */; };
 		7DFF368A275E6B2E00FC9B20 /* MovieOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFF3689275E6B2E00FC9B20 /* MovieOverviewViewModel.swift */; };
-		BEB15AE6DF2562E21D6F2520 /* Pods_Desafio_3_CII_3_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8944B7E4AFBECA2E7B28FC4B /* Pods_Desafio_3_CII_3_Tests.framework */; };
 		CF06B92327553CB0007BA01D /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06B92227553CB0007BA01D /* Dates.swift */; };
 		CF0943D827580C9F00395B9F /* MoviesAPIMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0943D727580C9F00395B9F /* MoviesAPIMoya.swift */; };
 		CF0943EB275820F700395B9F /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0943EA275820F700395B9F /* BundleExtension.swift */; };
@@ -36,14 +40,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CF1EF039275155B9005783B5 /* PBXContainerItemProxy */ = {
+		7DAA5D31276240B10041E6C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF3E2BFB274FF5E9004CC4AF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CF3E2C02274FF5E9004CC4AF;
 			remoteInfo = "Desafio 3(CII-3)";
 		};
-		CF3E2C1A274FF5EA004CC4AF /* PBXContainerItemProxy */ = {
+		CF1EF039275155B9005783B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF3E2BFB274FF5E9004CC4AF /* Project object */;
 			proxyType = 1;
@@ -64,6 +68,11 @@
 		7D67F63A275E9F7E00F5DC7F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		7D67F63C275EA14D00F5DC7F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7D8A1B0F8AD0E2A2513FECD8 /* Pods-Desafio 3(CII-3).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio 3(CII-3).release.xcconfig"; path = "Target Support Files/Pods-Desafio 3(CII-3)/Pods-Desafio 3(CII-3).release.xcconfig"; sourceTree = "<group>"; };
+		7DAA5D2D276240B10041E6C8 /* Desafio 3(CII-3)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desafio 3(CII-3)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DAA5D37276240C70041E6C8 /* APIModelFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIModelFormatter.swift; sourceTree = "<group>"; };
+		7DAA5D38276240C70041E6C8 /* APIModelColorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIModelColorsTests.swift; sourceTree = "<group>"; };
+		7DAA5D39276240C70041E6C8 /* APIModelFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIModelFunctionsTests.swift; sourceTree = "<group>"; };
+		7DAA5D3E276240CF0041E6C8 /* StubedDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubedDataTests.swift; sourceTree = "<group>"; };
 		7DB90231275FDF8500703458 /* OverviewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewCoordinator.swift; sourceTree = "<group>"; };
 		7DFF3689275E6B2E00FC9B20 /* MovieOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieOverviewViewModel.swift; sourceTree = "<group>"; };
 		8944B7E4AFBECA2E7B28FC4B /* Pods_Desafio_3_CII_3_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_3_CII_3_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +92,6 @@
 		CF3E2C0D274FF5E9004CC4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF3E2C12274FF5EA004CC4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF3E2C14274FF5EA004CC4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF3E2C19274FF5EA004CC4AF /* Desafio 3(CII-3)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Desafio 3(CII-3)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3E2C41274FFB21004CC4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF3E2C49274FFD9A004CC4AF /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		CF3E2C56275000D6004CC4AF /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +101,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7DAA5D2A276240B10041E6C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				330933CCA10496DEF8B609BE /* Pods_Desafio_3_CII_3_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF1EF031275155B9005783B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,14 +122,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5542CE22422A58415A9877 /* Pods_Desafio_3_CII_3_.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF3E2C16274FF5EA004CC4AF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEB15AE6DF2562E21D6F2520 /* Pods_Desafio_3_CII_3_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +193,33 @@
 				CF3E2C11274FF5EA004CC4AF /* LaunchScreen.storyboard */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		7DAA5D2E276240B10041E6C8 /* Desafio 3(CII-3)Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA5D3D276240CF0041E6C8 /* Stubed */,
+				7DAA5D36276240C70041E6C8 /* Model */,
+			);
+			path = "Desafio 3(CII-3)Tests";
+			sourceTree = "<group>";
+		};
+		7DAA5D36276240C70041E6C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA5D37276240C70041E6C8 /* APIModelFormatter.swift */,
+				7DAA5D38276240C70041E6C8 /* APIModelColorsTests.swift */,
+				7DAA5D39276240C70041E6C8 /* APIModelFunctionsTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DAA5D3D276240CF0041E6C8 /* Stubed */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA5D3E276240CF0041E6C8 /* StubedDataTests.swift */,
+			);
+			path = Stubed;
 			sourceTree = "<group>";
 		};
 		7DB90226275FDDDA00703458 /* MoviesScreen */ = {
@@ -316,6 +351,7 @@
 			children = (
 				CF3E2C05274FF5E9004CC4AF /* Desafio 3(CII-3) */,
 				CF1EF035275155B9005783B5 /* Desafio 3(CII-3)UITests */,
+				7DAA5D2E276240B10041E6C8 /* Desafio 3(CII-3)Tests */,
 				CF3E2C04274FF5E9004CC4AF /* Products */,
 				D3FC162A784E8C4754DDFB15 /* Pods */,
 				6E946F735D820500E385A2EE /* Frameworks */,
@@ -326,8 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				CF3E2C03274FF5E9004CC4AF /* Desafio 3(CII-3).app */,
-				CF3E2C19274FF5EA004CC4AF /* Desafio 3(CII-3)Tests.xctest */,
 				CF1EF034275155B9005783B5 /* Desafio 3(CII-3)UITests.xctest */,
+				7DAA5D2D276240B10041E6C8 /* Desafio 3(CII-3)Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -358,6 +394,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7DAA5D2C276240B10041E6C8 /* Desafio 3(CII-3)Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DAA5D33276240B10041E6C8 /* Build configuration list for PBXNativeTarget "Desafio 3(CII-3)Tests" */;
+			buildPhases = (
+				C69BBF321F41C214D7E94B2B /* [CP] Check Pods Manifest.lock */,
+				7DAA5D29276240B10041E6C8 /* Sources */,
+				7DAA5D2A276240B10041E6C8 /* Frameworks */,
+				7DAA5D2B276240B10041E6C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DAA5D32276240B10041E6C8 /* PBXTargetDependency */,
+			);
+			name = "Desafio 3(CII-3)Tests";
+			productName = "Desafio 3(CII-3)Tests";
+			productReference = 7DAA5D2D276240B10041E6C8 /* Desafio 3(CII-3)Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CF1EF033275155B9005783B5 /* Desafio 3(CII-3)UITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF1EF03B275155B9005783B5 /* Build configuration list for PBXNativeTarget "Desafio 3(CII-3)UITests" */;
@@ -397,44 +452,25 @@
 			productReference = CF3E2C03274FF5E9004CC4AF /* Desafio 3(CII-3).app */;
 			productType = "com.apple.product-type.application";
 		};
-		CF3E2C18274FF5EA004CC4AF /* Desafio 3(CII-3)Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CF3E2C30274FF5EA004CC4AF /* Build configuration list for PBXNativeTarget "Desafio 3(CII-3)Tests" */;
-			buildPhases = (
-				70EEDB2BBF5DED0625EAC892 /* [CP] Check Pods Manifest.lock */,
-				CF3E2C15274FF5EA004CC4AF /* Sources */,
-				CF3E2C16274FF5EA004CC4AF /* Frameworks */,
-				CF3E2C17274FF5EA004CC4AF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CF3E2C1B274FF5EA004CC4AF /* PBXTargetDependency */,
-			);
-			name = "Desafio 3(CII-3)Tests";
-			productName = "Desafio 3(CII-3)Tests";
-			productReference = CF3E2C19274FF5EA004CC4AF /* Desafio 3(CII-3)Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CF3E2BFB274FF5E9004CC4AF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					7DAA5D2C276240B10041E6C8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = CF3E2C02274FF5E9004CC4AF;
+					};
 					CF1EF033275155B9005783B5 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = CF3E2C02274FF5E9004CC4AF;
 					};
 					CF3E2C02274FF5E9004CC4AF = {
 						CreatedOnToolsVersion = 12.4;
-					};
-					CF3E2C18274FF5EA004CC4AF = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = CF3E2C02274FF5E9004CC4AF;
 					};
 				};
 			};
@@ -452,13 +488,20 @@
 			projectRoot = "";
 			targets = (
 				CF3E2C02274FF5E9004CC4AF /* Desafio 3(CII-3) */,
-				CF3E2C18274FF5EA004CC4AF /* Desafio 3(CII-3)Tests */,
 				CF1EF033275155B9005783B5 /* Desafio 3(CII-3)UITests */,
+				7DAA5D2C276240B10041E6C8 /* Desafio 3(CII-3)Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7DAA5D2B276240B10041E6C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF1EF032275155B9005783B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,13 +517,6 @@
 				CF3E2C42274FFB21004CC4AF /* Assets.xcassets in Resources */,
 				7D676627275926AF0066CEC9 /* movies.json in Resources */,
 				CF3E2C0E274FF5E9004CC4AF /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF3E2C17274FF5EA004CC4AF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +584,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70EEDB2BBF5DED0625EAC892 /* [CP] Check Pods Manifest.lock */ = {
+		C69BBF321F41C214D7E94B2B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -590,6 +626,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7DAA5D29276240B10041E6C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DAA5D3F276240CF0041E6C8 /* StubedDataTests.swift in Sources */,
+				7DAA5D3C276240C70041E6C8 /* APIModelFunctionsTests.swift in Sources */,
+				7DAA5D3B276240C70041E6C8 /* APIModelColorsTests.swift in Sources */,
+				7DAA5D3A276240C70041E6C8 /* APIModelFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF1EF030275155B9005783B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,25 +670,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF3E2C15274FF5EA004CC4AF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7DAA5D32276240B10041E6C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF3E2C02274FF5E9004CC4AF /* Desafio 3(CII-3) */;
+			targetProxy = 7DAA5D31276240B10041E6C8 /* PBXContainerItemProxy */;
+		};
 		CF1EF03A275155B9005783B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CF3E2C02274FF5E9004CC4AF /* Desafio 3(CII-3) */;
 			targetProxy = CF1EF039275155B9005783B5 /* PBXContainerItemProxy */;
-		};
-		CF3E2C1B274FF5EA004CC4AF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CF3E2C02274FF5E9004CC4AF /* Desafio 3(CII-3) */;
-			targetProxy = CF3E2C1A274FF5EA004CC4AF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -665,6 +705,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7DAA5D34276240B10041E6C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EA6007E9BD05F6F0589B959 /* Pods-Desafio 3(CII-3)Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.Desafio-3-CII-3-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio 3(CII-3).app/Desafio 3(CII-3)";
+			};
+			name = Debug;
+		};
+		7DAA5D35276240B10041E6C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C294FF8107E178E926C7C6 /* Pods-Desafio 3(CII-3)Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.Desafio-3-CII-3-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio 3(CII-3).app/Desafio 3(CII-3)";
+			};
+			name = Release;
+		};
 		CF1EF03C275155B9005783B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F1220037E7053FDEF823B83 /* Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests.debug.xcconfig */;
@@ -857,53 +947,18 @@
 			};
 			name = Release;
 		};
-		CF3E2C31274FF5EA004CC4AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EA6007E9BD05F6F0589B959 /* Pods-Desafio 3(CII-3)Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Desafio 3(CII-3)Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ilia.estagio.Desafio-3-CII-3-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio 3(CII-3).app/Desafio 3(CII-3)";
-			};
-			name = Debug;
-		};
-		CF3E2C32274FF5EA004CC4AF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6C294FF8107E178E926C7C6 /* Pods-Desafio 3(CII-3)Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Desafio 3(CII-3)Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ilia.estagio.Desafio-3-CII-3-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Desafio 3(CII-3).app/Desafio 3(CII-3)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7DAA5D33276240B10041E6C8 /* Build configuration list for PBXNativeTarget "Desafio 3(CII-3)Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DAA5D34276240B10041E6C8 /* Debug */,
+				7DAA5D35276240B10041E6C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CF1EF03B275155B9005783B5 /* Build configuration list for PBXNativeTarget "Desafio 3(CII-3)UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -927,15 +982,6 @@
 			buildConfigurations = (
 				CF3E2C2E274FF5EA004CC4AF /* Debug */,
 				CF3E2C2F274FF5EA004CC4AF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CF3E2C30274FF5EA004CC4AF /* Build configuration list for PBXNativeTarget "Desafio 3(CII-3)Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF3E2C31274FF5EA004CC4AF /* Debug */,
-				CF3E2C32274FF5EA004CC4AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

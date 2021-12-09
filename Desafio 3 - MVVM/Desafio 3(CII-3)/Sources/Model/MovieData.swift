@@ -11,5 +11,4 @@ class MovieData {
     var updateList: Int?
     var maxPage: Int = 0
     var currentPage = 1
-
 }

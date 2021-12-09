@@ -14,7 +14,7 @@ class MoviesViewController: UIViewController {
     
     var moviesViewModel: MoviesViewModel!
     var coordinator: MainCoordinator?
-    var passData = PublishSubject<MovieResult>()
+    let passData = PublishSubject<MovieResult>()
     var bag: DisposeBag!
     var movies: [MovieResult]!
 
@@ -53,6 +53,7 @@ extension MoviesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
+        cell.dataImage = MovieOverviewViewModel()
         cell.onBind(data: movies[indexPath.item])
         
         // Loads more pages
