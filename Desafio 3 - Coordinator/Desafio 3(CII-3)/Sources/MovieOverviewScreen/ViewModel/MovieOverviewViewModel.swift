@@ -10,10 +10,6 @@ import Moya
 
 class MovieOverviewViewModel {
     
-    var storedMovies = [MovieResult]()
-    var page = 1
-    let maxPage = 20
-    var newIndex: Int = 0
     let imageProvider = MoyaProvider<ImagesAPI>()
     
     func setImageLink(url: String) -> String {
@@ -59,4 +55,6 @@ class MovieOverviewViewModel {
             return #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         }
     }
+    
+    
 }

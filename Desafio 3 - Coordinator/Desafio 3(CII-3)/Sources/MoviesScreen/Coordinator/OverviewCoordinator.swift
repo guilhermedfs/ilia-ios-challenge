@@ -7,17 +7,11 @@
 
 import UIKit
 
-class OverviewCoordinator: Coordinator {
+class OverviewCoordinator: BaseCoordinator {
     
-    var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
     var data: MovieResult?
     
-    init (navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-    
-    func start() {
+    override func start() {
         let view = MovieDetailsViewController.instantiate()
         view.coordinator = self
         view.data = data
@@ -25,8 +19,7 @@ class OverviewCoordinator: Coordinator {
         navigationController.pushViewController(view, animated: true)
     }
     
-    func addDependency(coordinator: Coordinator?) {
-        
+    override func finalize() {
+        self.removeDependency(coordinator: self)
     }
-    
 }

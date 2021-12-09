@@ -10,34 +10,25 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class MainCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController
+class MainCoordinator: BaseCoordinator {
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-    
-    func start() {
+    override func start() {
         let vc = MoviesViewController.instantiate()
         vc.coordinator = self
-        vc.moviesViewModel = MoviesViewModel(movieData: MovieData())
+        vc.moviesViewModel = MoviesViewModel(movieData: MovieData(maxPage: 0, currentPage: 1))
         vc.movies = []
         vc.bag = DisposeBag()
         navigationController.pushViewController(vc, animated: false)
     }
     
     func seeMovieDetails(data: MovieResult?) {
-        let child = OverviewCoordinator(navigationController: navigationController)
+        let child = OverviewCoordinator(navigationController: navigationController, childCoordinators: childCoordinators)
         addDependency(coordinator: child)
         child.data = data
         child.start()
     }
     
-    func addDependency(coordinator: Coordinator?) {
-        guard let child = coordinator else {
-            return
-        }
-        childCoordinators.append(child)
+    override func finalize() {
+        self.removeDependency(coordinator: self)
     }
 }

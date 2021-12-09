@@ -8,10 +8,12 @@
 import Foundation
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject{
     var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
     
     func start()
     func addDependency(coordinator: Coordinator?)
+    func removeDependency(coordinator: Coordinator?)
+    func finalize()
 }

@@ -60,6 +60,7 @@ extension MoviesViewController: UICollectionViewDataSource {
         if indexPath.row == self.movies.count - 1 {
             moviesViewModel.loadPages()
         }
+        
         return cell
     }
 }
@@ -73,7 +74,6 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout{
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         coordinator?.seeMovieDetails(data: movies[indexPath.item])
-        moviesViewModel.movieData.updateList = indexPath.item
     }
     
     // The version above works with a pull gesture on the end of the app
