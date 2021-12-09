@@ -19,8 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let viewController = MoviesViewController(moviesViewModel: MoviesViewModel())
-        let navController = UINavigationController(rootViewController: viewController)
+        let navController = UINavigationController()
         window?.rootViewController = navController
         let coordinator = MainCoordinator(navigationController: navController)
         coordinator.start()

@@ -21,6 +21,7 @@ class OverviewCoordinator: Coordinator {
         let view = MovieDetailsViewController.instantiate()
         view.coordinator = self
         view.data = data
+        view.viewModel = MovieOverviewViewModel()
         navigationController.pushViewController(view, animated: true)
     }
     

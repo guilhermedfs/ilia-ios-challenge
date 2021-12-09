@@ -12,23 +12,13 @@ import RxSwift
 
 class MoviesViewController: UIViewController {
     
-    let moviesViewModel: MoviesViewModel
+    var moviesViewModel: MoviesViewModel!
     var coordinator: MainCoordinator?
     var passData = PublishSubject<MovieResult>()
+    var bag: DisposeBag!
+    var movies: [MovieResult]!
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
-    
-    var bag = DisposeBag()
-    var movies: [MovieResult] = []
-    
-    init(moviesViewModel: MoviesViewModel) {
-        self.moviesViewModel = moviesViewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

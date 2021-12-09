@@ -17,8 +17,8 @@ class MovieDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var movieAverageLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     
-    var data: MovieResult?
-    var controller = MovieOverviewViewModel()
+    var data: MovieResult!
+    var viewModel: MovieOverviewViewModel!
     var coordinator: OverviewCoordinator?
     var newValue = PublishSubject<MovieResult>()
     
@@ -31,7 +31,7 @@ class MovieDetailsViewController: UIViewController, Storyboarded {
 
         movieDetailsLabel.text = data?.overview == "" ? "No overview avaliable" : data?.overview
         
-        releaseDateLabel.text = "Release date: \(controller.formatDate(date: data?.releaseDate ?? ""))"
+        releaseDateLabel.text = "Release date: \(viewModel.formatDate(date: data?.releaseDate ?? ""))"
         
         posterPath()
         
@@ -39,10 +39,10 @@ class MovieDetailsViewController: UIViewController, Storyboarded {
     }
     
     func voteString () {
-        let voteString = "Vote average: \(data?.voteAverage ?? 0)"
+        let voteString = "Vote average: \(data.voteAverage ?? 0)"
         let attributedString = NSMutableAttributedString.init(string: voteString)
         let range = (voteString as NSString).range(of: String(data?.voteAverage ?? 0))
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: controller.getTextColor(average: data?.voteAverage ?? 0), range: range)
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: viewModel.getTextColor(average: data?.voteAverage ?? 0), range: range)
         movieAverageLabel.attributedText = attributedString
         movieAverageLabel.isUserInteractionEnabled = false
     }
@@ -52,7 +52,7 @@ class MovieDetailsViewController: UIViewController, Storyboarded {
             return
         }
         
-        controller.loadImage(url: posterPath){
+        viewModel?.loadImage(url: posterPath){
             (datas) in
                 self.movieImageView.image = UIImage(data: datas ?? Data())
         }

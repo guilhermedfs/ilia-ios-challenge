@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
 
 class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
@@ -19,6 +21,9 @@ class MainCoordinator: Coordinator {
     func start() {
         let vc = MoviesViewController.instantiate()
         vc.coordinator = self
+        vc.moviesViewModel = MoviesViewModel(movieData: MovieData())
+        vc.movies = []
+        vc.bag = DisposeBag()
         navigationController.pushViewController(vc, animated: false)
     }
     

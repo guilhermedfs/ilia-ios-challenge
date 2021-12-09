@@ -14,7 +14,11 @@ class MoviesViewModel {
     var movies = PublishSubject<[MovieResult]>()
     let movieProvider = MoyaProvider<MovieAPI>()
     var changePage = PublishSubject<Int>()
-    var movieData = MovieData()
+    var movieData: MovieData
+    
+    init(movieData: MovieData) {
+        self.movieData = movieData
+    }
     
     func fetchData() {
         movieProvider.request(.upcomingMovies(page: movieData.currentPage)) { (result) in
