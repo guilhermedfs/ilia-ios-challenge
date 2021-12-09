@@ -104,8 +104,8 @@ iOSInjectionProject/
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
-!*.xcworkspace/contents.xcworkspacedata
-**/xcshareddata/WorkspaceSettings.xcsettings
+*.xcworkspace/contents.xcworkspacedata
+*/xcshareddata/WorkspaceSettings.xcsettings
 **/.DS_Store
 
 # 
