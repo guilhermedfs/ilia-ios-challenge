@@ -13,7 +13,7 @@ class APIModelColorsTests: XCTestCase {
     
     // Test if the correct color is returned when the value is 5
     func testSelectColorYellow() {
-        let selectData = MovieOverviewViewModel()
+        let selectData = MovieDetailsViewModel()
         
         let result = selectData.getTextColor(average: 5.0)
         XCTAssertEqual(result, #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1))
@@ -21,7 +21,7 @@ class APIModelColorsTests: XCTestCase {
     
     // Test if the correct color is returned when the value is 6.1
     func testSelectColorGreen() {
-        let selectData = MovieOverviewViewModel()
+        let selectData = MovieDetailsViewModel()
         
         let result = selectData.getTextColor(average: 6.1)
         XCTAssertEqual(result, #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
@@ -29,7 +29,7 @@ class APIModelColorsTests: XCTestCase {
     
     // Test if the correct color is returned when the value is 2.9
     func testSelectColorRed() {
-        let selectData = MovieOverviewViewModel()
+        let selectData = MovieDetailsViewModel()
         
         let result = selectData.getTextColor(average: 2.9)
         XCTAssertEqual(result, #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1))

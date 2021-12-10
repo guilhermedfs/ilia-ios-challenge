@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-class MovieOverviewViewModel {
+class MovieDetailsViewModel {
     
     let imageProvider = MoyaProvider<ImagesAPI>()
     
@@ -56,5 +56,8 @@ class MovieOverviewViewModel {
         }
     }
     
+    deinit {
+        print("ARC is deallocating memory at MovieDetailsViewModel.")
+    }
     
 }

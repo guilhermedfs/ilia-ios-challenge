@@ -25,10 +25,11 @@ class MainCoordinator: BaseCoordinator {
         let child = OverviewCoordinator(navigationController: navigationController, childCoordinators: childCoordinators)
         addDependency(coordinator: child)
         child.data = data
+        child.parentCoordinator = self
         child.start()
     }
     
-    override func finalize() {
-        self.removeDependency(coordinator: self)
+    deinit {
+        print("combinator clean")
     }
 }

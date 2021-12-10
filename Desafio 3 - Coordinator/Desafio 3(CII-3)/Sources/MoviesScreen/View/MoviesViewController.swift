@@ -53,7 +53,7 @@ extension MoviesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
-        cell.dataImage = MovieOverviewViewModel()
+        cell.dataImage = MovieDetailsViewModel()
         cell.onBind(data: movies[indexPath.item])
         
         // Loads more pages
@@ -90,3 +90,4 @@ extension MoviesViewController: UICollectionViewDelegate {
 extension MoviesViewController: Storyboarded {
     
 }
+

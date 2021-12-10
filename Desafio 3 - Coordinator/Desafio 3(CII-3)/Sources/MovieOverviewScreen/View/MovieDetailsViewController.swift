@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MovieDetailsViewController: UIViewController, Storyboarded {
+class MovieDetailsViewController: UIViewController {
     
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
@@ -18,8 +18,8 @@ class MovieDetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var releaseDateLabel: UILabel!
     
     var data: MovieResult!
-    var viewModel: MovieOverviewViewModel!
-    var coordinator: OverviewCoordinator?
+    var viewModel: MovieDetailsViewModel!
+    weak var coordinator: OverviewCoordinator?
     var newValue = PublishSubject<MovieResult>()
     
     override func viewDidLoad() {
@@ -36,6 +36,7 @@ class MovieDetailsViewController: UIViewController, Storyboarded {
         posterPath()
         
         voteString()
+                
     }
     
     func voteString () {
@@ -62,7 +63,17 @@ class MovieDetailsViewController: UIViewController, Storyboarded {
         super.viewWillDisappear(animated)
 
         if self.isMovingFromParent {
-            self.coordinator?.finalize()
+            coordinator?.finalize()
         }
+        print(#function)
+    }
+
+    deinit {
+        print("ARC is deallocating memory at MovieDetailsViewController")
     }
 }
+
+extension MovieDetailsViewController: Storyboarded {
+    
+}
+

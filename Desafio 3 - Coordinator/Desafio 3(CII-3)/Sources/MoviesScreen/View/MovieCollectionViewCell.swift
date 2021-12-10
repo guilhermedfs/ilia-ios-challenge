@@ -11,7 +11,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieLabel: UILabel!
-    var dataImage: MovieOverviewViewModel!
+    var dataImage: MovieDetailsViewModel!
 
     func setup(with movie: String) {
         movieLabel.text = movie

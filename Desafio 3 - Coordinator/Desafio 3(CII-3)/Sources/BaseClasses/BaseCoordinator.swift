@@ -11,6 +11,7 @@ class BaseCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator]
     var navigationController: UINavigationController
+    var parentCoordinator: BaseCoordinator?
     
     init(navigationController: UINavigationController, childCoordinators: [Coordinator]) {
         self.navigationController = navigationController
@@ -32,14 +33,18 @@ class BaseCoordinator: Coordinator {
         guard let coordinator = coordinator else {
             return
         }
+        
         guard let index = childCoordinators.firstIndex(where: { $0 === coordinator }) else {
+            print("erro")
+            print(childCoordinators.count)
             return
         }
         
+        print("sucesso")
         childCoordinators.remove(at: index)
+        
     }
     
     func finalize() {
-        self.removeDependency(coordinator: self)
     }
 }
