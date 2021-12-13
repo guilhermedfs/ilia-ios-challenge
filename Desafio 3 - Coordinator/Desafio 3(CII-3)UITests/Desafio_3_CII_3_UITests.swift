@@ -39,52 +39,25 @@ class Desafio_3_CII_3_UITests: XCTestCase {
         app.terminate()
     }
     
-    // Tests navigating though pages
-    func testNavigateThoughPages() {
-                
-        let moviesNavigationBar = XCUIApplication().navigationBars["Movies"]
-        let nextButton = moviesNavigationBar.buttons["Next"]
-        nextButton.tap()
-        nextButton.tap()
-        nextButton.tap()
-        nextButton.tap()
-        
-        let previousButton = moviesNavigationBar.buttons["Previous"]
-        previousButton.tap()
-        previousButton.tap()
-        previousButton.tap()
-        previousButton.tap()
-        
-        XCUIApplication().terminate()
-        
-    }
-    
     // Tests selecting a movie after navigating though pages
     func testSelectAfterNavigating() {
         
+        
         let app = XCUIApplication()
-
-        let nextButton = app.navigationBars["Movies"].buttons["Next"]
-        nextButton.tap()
-        nextButton.tap()
+        app.swipeUp()
         let movie = app.collectionViews.children(matching:.any).element(boundBy: 3)
         if movie.exists {
              movie.tap()
         }
-        let moviesButton = app.navigationBars["Desafio_3_CII_3_.MovieDetailsView"].buttons["Movies"]
-        moviesButton.tap()
-        
-        app.terminate()
+    
     }
     
     // This test select different movies after changing the screen
     func testSelectingDifferentMovies() {
         
         let app = XCUIApplication()
-        let nextButton = app.navigationBars["Movies"].buttons["Next"]
-        nextButton.tap()
-        nextButton.tap()
-        nextButton.tap()
+        app.swipeUp()
+        app.swipeUp()
         
         var movie = app.collectionViews.children(matching:.any).element(boundBy: 3)
         if movie.exists {
@@ -93,7 +66,7 @@ class Desafio_3_CII_3_UITests: XCTestCase {
         
         let moviesButton = app.navigationBars["Desafio_3_CII_3_.MovieDetailsView"].buttons["Movies"]
         moviesButton.tap()
-        movie = app.collectionViews.children(matching:.any).element(boundBy: 6)
+        movie = app.collectionViews.children(matching:.any).element(boundBy: 2)
         if movie.exists {
              movie.tap()
         }

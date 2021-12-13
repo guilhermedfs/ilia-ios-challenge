@@ -20,7 +20,6 @@ class MovieDetailsViewController: UIViewController {
     var data: MovieResult!
     var viewModel: MovieDetailsViewModel!
     weak var coordinator: OverviewCoordinator?
-    var newValue = PublishSubject<MovieResult>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +59,7 @@ class MovieDetailsViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewDidDisappear(animated)
 
         if self.isMovingFromParent {
             coordinator?.finalize()

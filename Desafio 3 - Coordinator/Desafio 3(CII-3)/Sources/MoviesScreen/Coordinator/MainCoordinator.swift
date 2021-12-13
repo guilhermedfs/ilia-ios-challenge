@@ -30,6 +30,6 @@ class MainCoordinator: BaseCoordinator {
     }
     
     deinit {
-        print("combinator clean")
+        print("coordinator clean")
     }
 }
