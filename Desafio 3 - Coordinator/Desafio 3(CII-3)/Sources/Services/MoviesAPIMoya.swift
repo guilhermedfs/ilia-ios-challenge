@@ -10,7 +10,7 @@ import Moya
 
 enum MovieAPI {
     case upcomingMovies(page: Int, country: String)
-    case popularMovies(page: Int)
+    case popularMovies(page: Int, country: String)
 }
 
 extension MovieAPI: TargetType {
@@ -60,10 +60,10 @@ extension MovieAPI: TargetType {
             parameters["language"] = country
             parameters["page"] = "\(page)"
             return parameters
-        case .popularMovies(let page):
+        case .popularMovies(let page, let country):
             var parameters = [String:Any]()
             parameters["api_key"] = API_KEY
-            parameters["language"] = "pt-BR"
+            parameters["language"] = country
             parameters["page"] = "\(page)"
             return parameters
         }

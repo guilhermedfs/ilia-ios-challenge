@@ -40,7 +40,7 @@ class MovieDetailsViewModel {
             return "00/00/0000"
         }
         
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateStyle = .short
         let dateString = dateFormatter.string(from: s)
         
         return dateString

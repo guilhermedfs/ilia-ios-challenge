@@ -28,7 +28,7 @@ class MovieDetailsViewController: UIViewController {
         
         movieTitleLabel.text = data?.title
 
-        movieDetailsLabel.text = data?.overview == "" ? "No overview avaliable" : data?.overview
+        movieDetailsLabel.text = data?.overview == "" ? NSLocalizedString("no_synopsis", comment: "No synopsis") : data?.overview
         
         let formatString = NSLocalizedString("release_date", comment: "Release date")
         
@@ -41,9 +41,11 @@ class MovieDetailsViewController: UIViewController {
     }
     
     func voteString () {
-        let voteString = "Vote average: \(data.voteAverage ?? 0)"
+        let voteAverage = data.voteAverage
+        let formatString = NSLocalizedString("vote_average", comment: "Vote Average")
+        let voteString = String.localizedStringWithFormat(formatString, voteAverage!)
         let attributedString = NSMutableAttributedString.init(string: voteString)
-        let range = (voteString as NSString).range(of: String(data?.voteAverage ?? 0))
+        let range = (voteString as NSString).range(of: String(voteAverage ?? 0))
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: viewModel.getTextColor(average: data?.voteAverage ?? 0), range: range)
         movieAverageLabel.attributedText = attributedString
         movieAverageLabel.isUserInteractionEnabled = false
