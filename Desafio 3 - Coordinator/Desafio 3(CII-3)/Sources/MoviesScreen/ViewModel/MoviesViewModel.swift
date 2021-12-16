@@ -16,13 +16,16 @@ class MoviesViewModel {
     let movieProvider = MoyaProvider<MovieAPI>()
     var changePage = PublishSubject<Int>()
     var movieData: MovieData
+    let country = NSLocale.current.languageCode
+    let countryDict = CountryDict()
     
     init(movieData: MovieData) {
         self.movieData = movieData
     }
     
     func fetchData() {
-        movieProvider.request(.upcomingMovies(page: movieData.currentPage)) { (result) in
+        guard let newCountry = country else {return}
+        movieProvider.request(.upcomingMovies(page: movieData.currentPage, country: countryDict.countries[newCountry]!)) { (result) in
             switch result {
             case .success(let response):
                 let user = try! JSONDecoder().decode(MoviesOverview.self, from: response.data)

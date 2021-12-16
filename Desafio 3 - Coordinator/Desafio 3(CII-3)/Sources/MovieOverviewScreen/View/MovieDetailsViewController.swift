@@ -30,7 +30,9 @@ class MovieDetailsViewController: UIViewController {
 
         movieDetailsLabel.text = data?.overview == "" ? "No overview avaliable" : data?.overview
         
-        releaseDateLabel.text = "Release date: \(viewModel.formatDate(date: data?.releaseDate ?? ""))"
+        let formatString = NSLocalizedString("release_date", comment: "Release date")
+        
+        releaseDateLabel.text = String.localizedStringWithFormat(formatString, viewModel.formatDate(date: data?.releaseDate ?? ""))
         
         posterPath()
         

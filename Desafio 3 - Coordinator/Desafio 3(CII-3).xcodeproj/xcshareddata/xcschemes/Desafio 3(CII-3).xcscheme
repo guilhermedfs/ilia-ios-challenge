@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CF3E2C18274FF5EA004CC4AF"
+               BlueprintIdentifier = "7DAA5D2C276240B10041E6C8"
                BuildableName = "Desafio 3(CII-3)Tests.xctest"
                BlueprintName = "Desafio 3(CII-3)Tests"
                ReferencedContainer = "container:Desafio 3(CII-3).xcodeproj">
@@ -54,6 +54,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "pt-BR"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"

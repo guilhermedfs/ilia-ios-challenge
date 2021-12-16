@@ -18,12 +18,14 @@ class MoviesViewController: UIViewController {
     var bag: DisposeBag!
     var movies: [MovieResult]!
 
+    @IBOutlet weak var moviesNavigation: UINavigationItem!
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        moviesNavigation.title = NSLocalizedString("mv_label", comment: "Movie Label")
         moviesCollectionView.dataSource = self
         moviesCollectionView.delegate = self
         moviesCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
@@ -89,5 +91,15 @@ extension MoviesViewController: UICollectionViewDelegate {
 
 extension MoviesViewController: Storyboarded {
     
+}
+
+extension String {
+    func localized() -> String {
+        return NSLocalizedString(
+            self,
+            tableName: "Localizable",
+            bundle: .main,
+            value: self, comment: self)
+    }
 }
 

@@ -1,0 +1,18 @@
+
+/* Class = "UINavigationItem"; title = "Movies"; ObjectID = "NmG-69-XbB"; */
+"NmG-69-XbB.title" = "Movies";
+
+/* Class = "UILabel"; text = "Release Date: "; ObjectID = "T94-HJ-hTA"; */
+"T94-HJ-hTA.text" = "Release Date: %s";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TWp-sj-vk9"; */
+"TWp-sj-vk9.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XBQ-RT-ZyK"; */
+"XBQ-RT-ZyK.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YPb-ph-uQ3"; */
+"YPb-ph-uQ3.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZKl-YX-7TN"; */
+"ZKl-YX-7TN.text" = "Label";
