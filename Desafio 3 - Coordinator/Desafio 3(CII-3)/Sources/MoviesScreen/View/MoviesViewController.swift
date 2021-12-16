@@ -69,7 +69,7 @@ extension MoviesViewController: UICollectionViewDataSource {
 
 extension MoviesViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 300)
+        return CGSize(width: 205, height: 300)
     }
 }
 
@@ -86,6 +86,8 @@ extension MoviesViewController: UICollectionViewDelegate {
             moviesViewModel.loadPages()
         }
     }*/
+    
+    
     
 }
 
