@@ -8,6 +8,7 @@
 import Foundation
 
 class CountryDict {
+    let country = NSLocale.current.languageCode
     let countries = [
         "en": "en-US",
         "es": "es-ES",

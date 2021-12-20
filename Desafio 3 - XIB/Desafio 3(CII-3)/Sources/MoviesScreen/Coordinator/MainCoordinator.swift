@@ -15,7 +15,7 @@ class MainCoordinator: BaseCoordinator {
     override func start() {
         let vc = MoviesViewController()
         vc.coordinator = self
-        vc.moviesViewModel = MoviesViewModel(movieData: MovieData(maxPage: 0, currentPage: 1))
+        vc.moviesViewModel = MoviesViewModel(movieData: MovieData(maxPage: 0, currentPage: 1), countryDict: CountryDict())
         vc.movies = []
         vc.bag = DisposeBag()
         navigationController.pushViewController(vc, animated: false)

@@ -11,10 +11,11 @@ import Moya
 
 class StubedDataTests: XCTestCase {
     let provider = MoyaProvider<MovieAPI>.init(stubClosure: MoyaProvider<MovieAPI>.immediatelyStub)
+    let countryDict = CountryDict()
     
     // Test if the value of the data is not null
     func testIfStubedDataIsNotNil() {
-        provider.request(.upcomingMovies(page: 1)) { (result) in
+        provider.request(.upcomingMovies(page: 1, country: countryDict.countries[countryDict.country!]!)) { (result) in
             switch result {
             case .success(let response):
                 let user = try? JSONDecoder().decode(MoviesOverview.self, from: response.data)
@@ -28,7 +29,7 @@ class StubedDataTests: XCTestCase {
     
     // Test if the number of results is correct
     func testIfDataSizeIsEqualTheExpected() {
-        provider.request(.upcomingMovies(page: 1)) { (result) in
+        provider.request(.upcomingMovies(page: 1, country: countryDict.countries[countryDict.country!]!)) { (result) in
             switch result {
             case .success(let response):
                 let user = try? JSONDecoder().decode(MoviesOverview.self, from: response.data)

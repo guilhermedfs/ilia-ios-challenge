@@ -13,6 +13,7 @@
 		7D00C862275A9C03000E0F3C /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D00C861275A9C03000E0F3C /* MoviesViewModel.swift */; };
 		7D122D0D276B9F21007A3E0F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D122D0F276B9F21007A3E0F /* Localizable.strings */; };
 		7D122D12276BA3EB007A3E0F /* CountryDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D122D11276BA3EB007A3E0F /* CountryDict.swift */; };
+		7D30CC542770FB1000200269 /* AtributtesIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30CC532770FB1000200269 /* AtributtesIDs.swift */; };
 		7D524AB42770D2D800DBD828 /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D524AB32770D2D800DBD828 /* MovieDetailsViewController.xib */; };
 		7D676627275926AF0066CEC9 /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D676626275926AF0066CEC9 /* movies.json */; };
 		7D676629275935270066CEC9 /* ImagesAPIMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D676628275935270066CEC9 /* ImagesAPIMoya.swift */; };
@@ -71,6 +72,7 @@
 		7D122D11276BA3EB007A3E0F /* CountryDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDict.swift; sourceTree = "<group>"; };
 		7D122D14276BA698007A3E0F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7D122D16276BB117007A3E0F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D30CC532770FB1000200269 /* AtributtesIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributtesIDs.swift; sourceTree = "<group>"; };
 		7D524AB32770D2D800DBD828 /* MovieDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsViewController.xib; sourceTree = "<group>"; };
 		7D676626275926AF0066CEC9 /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
 		7D676628275935270066CEC9 /* ImagesAPIMoya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAPIMoya.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				7D67662D27594CCB0066CEC9 /* Assets */,
 				7D67662C27594CC00066CEC9 /* Mocks */,
 				7D122D0F276B9F21007A3E0F /* Localizable.strings */,
+				7D30CC532770FB1000200269 /* AtributtesIDs.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				CF3E2C4A274FFD9A004CC4AF /* MoviesViewController.swift in Sources */,
 				7D67F639275E9EED00F5DC7F /* Coordinator.swift in Sources */,
 				7D122D12276BA3EB007A3E0F /* CountryDict.swift in Sources */,
+				7D30CC542770FB1000200269 /* AtributtesIDs.swift in Sources */,
 				CF06B92327553CB0007BA01D /* Dates.swift in Sources */,
 				7D7C04FF276D3D58008637D0 /* MoviesCollectionViewCell.swift in Sources */,
 				CF3E2C07274FF5E9004CC4AF /* AppDelegate.swift in Sources */,

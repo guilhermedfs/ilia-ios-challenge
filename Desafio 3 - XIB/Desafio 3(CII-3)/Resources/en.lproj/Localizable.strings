@@ -7,5 +7,5 @@
 */
 "mv_label" = "Movies";
 "release_date" = "Release date: %@";
-"vote_average" = "Vote Average: %.01f";
+"vote_average" = "Vote Average: %.1f";
 "no_synopsis"= "No synopsis available.";
