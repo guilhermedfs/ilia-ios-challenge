@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Desafio 3(CII-3)
+
+  Created by Guilherme - ília on 16/12/21.
+  
+*/
+"mv_label" = "أفلام";
+"release_date" = "%@ :تاريخ الافراج عنه";
+"vote_average"= "%.01f: معدل التصويت";
+"no_synopsis" = "لا يوجد ملخص متاح.";

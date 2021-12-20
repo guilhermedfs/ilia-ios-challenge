@@ -1,0 +1,6 @@
+projectKey=test-estagio-ios
+serverUrl=http://newsonarqube.aisdigital.com.br
+serverVersion=8.4.2.36762
+dashboardUrl=http://newsonarqube.aisdigital.com.br/dashboard?id=test-estagio-ios
+ceTaskId=AX265TLN8pZcebasYHUD
+ceTaskUrl=http://newsonarqube.aisdigital.com.br/api/ce/task?id=AX265TLN8pZcebasYHUD

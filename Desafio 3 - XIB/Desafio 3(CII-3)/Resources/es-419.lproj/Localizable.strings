@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Desafio 3(CII-3)
+
+  Created by Guilherme - ília on 16/12/21.
+  
+*/
+"mv_label" = "Películas";
+"release_date" = "Fecha de lanzamiento: %@";
+"vote_average"= "Media de votos: %.01f";
+"no_synopsis"= "no hay sinopsis disponible.";
