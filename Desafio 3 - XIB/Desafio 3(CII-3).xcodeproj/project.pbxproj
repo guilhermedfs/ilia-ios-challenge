@@ -41,7 +41,6 @@
 		CF3E2C13274FF5EA004CC4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF3E2C11274FF5EA004CC4AF /* LaunchScreen.storyboard */; };
 		CF3E2C42274FFB21004CC4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF3E2C41274FFB21004CC4AF /* Assets.xcassets */; };
 		CF3E2C4A274FFD9A004CC4AF /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E2C49274FFD9A004CC4AF /* MoviesViewController.swift */; };
-		CF3E2C57275000D6004CC4AF /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E2C56275000D6004CC4AF /* MovieCollectionViewCell.swift */; };
 		CF3E2C6E27501478004CC4AF /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3E2C6D27501478004CC4AF /* MovieDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,7 +108,6 @@
 		CF3E2C14274FF5EA004CC4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF3E2C41274FFB21004CC4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF3E2C49274FFD9A004CC4AF /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
-		CF3E2C56275000D6004CC4AF /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF3E2C6D27501478004CC4AF /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		CFBD7069864496C815F39C01 /* Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests.release.xcconfig"; path = "Target Support Files/Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests/Pods-Desafio 3(CII-3)-Desafio 3(CII-3)UITests.release.xcconfig"; sourceTree = "<group>"; };
 		DA2BE68F49EEC186407AB59D /* Pods_Desafio_3_CII_3_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio_3_CII_3_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				7DB9022B275FDE8C00703458 /* API */,
-				7DB9022D275FDF1C00703458 /* Storyboard */,
 				7DB9022C275FDEA600703458 /* BaseClasses */,
 				7DB90226275FDDDA00703458 /* MoviesScreen */,
 				7DB9022E275FDF2D00703458 /* MovieOverviewScreen */,
@@ -261,7 +258,9 @@
 		7DB90228275FDE2900703458 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CF3E2C56275000D6004CC4AF /* MovieCollectionViewCell.swift */,
+				7D7C04FE276D3D58008637D0 /* MoviesCollectionViewCell.xib */,
+				7D7C04FB276D3BD2008637D0 /* MoviesViewController.xib */,
+				7D7C04FD276D3D58008637D0 /* MoviesCollectionViewCell.swift */,
 				CF3E2C49274FFD9A004CC4AF /* MoviesViewController.swift */,
 			);
 			path = View;
@@ -303,17 +302,6 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
-		7DB9022D275FDF1C00703458 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				7D7C04FB276D3BD2008637D0 /* MoviesViewController.xib */,
-				7D7C04FD276D3D58008637D0 /* MoviesCollectionViewCell.swift */,
-				7D7C04FE276D3D58008637D0 /* MoviesCollectionViewCell.xib */,
-				7D524AB32770D2D800DBD828 /* MovieDetailsViewController.xib */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		7DB9022E275FDF2D00703458 /* MovieOverviewScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				CF3E2C6D27501478004CC4AF /* MovieDetailsViewController.swift */,
+				7D524AB32770D2D800DBD828 /* MovieDetailsViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -695,7 +684,6 @@
 				7D67F637275E95BD00F5DC7F /* MovieData.swift in Sources */,
 				CF1EF04727515E29005783B5 /* MovieResult.swift in Sources */,
 				7DAA5D4127627F7F0041E6C8 /* BaseCoordinator.swift in Sources */,
-				CF3E2C57275000D6004CC4AF /* MovieCollectionViewCell.swift in Sources */,
 				CF0943EB275820F700395B9F /* BundleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
