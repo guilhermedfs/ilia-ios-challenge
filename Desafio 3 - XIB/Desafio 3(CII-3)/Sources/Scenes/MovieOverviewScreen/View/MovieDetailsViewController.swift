@@ -20,6 +20,7 @@ class MovieDetailsViewController: UIViewController {
     var data: MovieResult!
     var viewModel: MovieDetailsViewModel!
     weak var coordinator: OverviewCoordinator?
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,10 @@ class MovieDetailsViewController: UIViewController {
         posterPath()
         
         voteString()
-                
+        
+        let defaultColor = defaults.object(forKey: "UserColor") as? String ?? "White"
+        view.backgroundColor = Colors.colors[defaultColor]
+        
     }
     
     func voteString () {

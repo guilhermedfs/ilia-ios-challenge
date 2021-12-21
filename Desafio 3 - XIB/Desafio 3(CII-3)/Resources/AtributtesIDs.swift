@@ -12,4 +12,5 @@ class AtributtesIDs {
     static let releaseDateID: String = "release_date"
     static let voteAverageID: String = "vote_average"
     static let noSynopsisID: String = "no_synopsis"
+    static let colorName: String = "color_label"
 }

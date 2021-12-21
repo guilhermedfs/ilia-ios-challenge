@@ -21,10 +21,18 @@ class MainCoordinator: BaseCoordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func seeMovieDetails(data: MovieResult?) {
+    func showMovieDetails(data: MovieResult?) {
         let child = OverviewCoordinator(navigationController: navigationController, childCoordinators: childCoordinators)
         addDependency(coordinator: child)
         child.data = data
+        child.parentCoordinator = self
+        child.start()
+    }
+    
+    func showConfigsScreen(delegate: ChangeCollectionColor) {
+        let child = ConfigsCoordinator(navigationController: navigationController, childCoordinators: childCoordinators)
+        addDependency(coordinator: child)
+        child.delegate = delegate
         child.parentCoordinator = self
         child.start()
     }

@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ui9-Aa-H16">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" sectionInsetReference="layoutMargins" id="RGk-ek-5ko">
                         <size key="itemSize" width="200" height="300"/>
@@ -39,7 +39,7 @@
                 <constraint firstItem="ui9-Aa-H16" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8rR-zl-E3V"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ui9-Aa-H16" secondAttribute="trailing" id="D67-IV-Uiu"/>
                 <constraint firstItem="ui9-Aa-H16" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eO3-vd-sa1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ui9-Aa-H16" secondAttribute="bottom" id="rk1-y0-soe"/>
+                <constraint firstAttribute="bottom" secondItem="ui9-Aa-H16" secondAttribute="bottom" id="rk1-y0-soe"/>
             </constraints>
             <point key="canvasLocation" x="132" y="65"/>
         </view>

@@ -8,4 +8,5 @@
 "mv_label" = "Movies";
 "release_date" = "Release date: %@";
 "vote_average" = "Vote Average: %.1f";
-"no_synopsis"= "No synopsis available.";
+"no_synopsis" = "No synopsis available.";
+"color_label" = "Background Color";

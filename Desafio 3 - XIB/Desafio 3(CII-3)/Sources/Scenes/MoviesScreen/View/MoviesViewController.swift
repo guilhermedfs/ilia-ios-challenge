@@ -10,6 +10,9 @@ import Moya
 import RxCocoa
 import RxSwift
 
+protocol ChangeCollectionColor {
+    func changeColor(color: String)
+}
 class MoviesViewController: UIViewController {
     
     var moviesViewModel: MoviesViewModel!
@@ -17,15 +20,18 @@ class MoviesViewController: UIViewController {
     let passData = PublishSubject<MovieResult>()
     var bag: DisposeBag!
     var movies: [MovieResult]!
+    var changeMoviesColor = ConfigViewModel()
+    let defaults = UserDefaults.standard
 
-    @IBOutlet weak var moviesNavigation: UINavigationItem!
+
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        moviesNavigation.title = NSLocalizedString("mv_label", comment: "Movie Label")
+        setNavBarTitle()
+        setNavBarConfigItem()
         let nibCell = UINib(nibName: "MoviesCollectionViewCell", bundle: nil)
         moviesCollectionView.register(nibCell, forCellWithReuseIdentifier: "MoviesCollectionViewCell")
         moviesCollectionView.dataSource = self
@@ -33,6 +39,8 @@ class MoviesViewController: UIViewController {
         moviesCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         moviesViewModel.fetchData()
         bindData()
+        let defaultColor = defaults.object(forKey: "UserColor") as? String ?? "White"
+        moviesCollectionView.backgroundColor = Colors.colors[defaultColor]
     }
     
     func reloadData() {
@@ -47,6 +55,23 @@ class MoviesViewController: UIViewController {
         moviesViewModel.changePage.subscribe { _ in
             self.moviesViewModel.fetchData()
         }.disposed(by: bag)
+    }
+    
+    func setNavBarTitle () {
+        self.navigationController?.navigationBar.topItem?.title = NSLocalizedString(AtributtesIDs.movieLabelID, comment: "Movie Label")
+    }
+    
+    func setNavBarConfigItem () {
+        let item = UIButton(type: .custom)
+        item.setImage(.actions, for: .normal)
+        item.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        item.addTarget(self, action: #selector(onTapConfig), for: .touchUpInside)
+        let item1 = UIBarButtonItem(customView: item)
+        self.navigationItem.setRightBarButton(item1, animated: true)
+    }
+    
+    @objc func onTapConfig() {
+        coordinator?.showConfigsScreen(delegate: self)
     }
 }
 
@@ -85,7 +110,7 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout{
 
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        coordinator?.seeMovieDetails(data: movies[indexPath.item])
+        coordinator?.showMovieDetails(data: movies[indexPath.item])
     }
 }
 
@@ -99,3 +124,9 @@ extension String {
     }
 }
 
+extension MoviesViewController: ChangeCollectionColor {
+    func changeColor(color: String) {
+        moviesCollectionView.backgroundColor = Colors.colors[color]
+        defaults.set(color, forKey: "UserColor")
+    }
+}

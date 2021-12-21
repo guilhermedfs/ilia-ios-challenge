@@ -19,7 +19,6 @@ class BaseCoordinator: Coordinator {
     }
     
     func start() {
-        
     }
     
     func addDependency(coordinator: Coordinator?) {
