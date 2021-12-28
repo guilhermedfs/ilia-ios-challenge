@@ -25,7 +25,7 @@ struct ContentView: View {
                     // 4. Populate into grid
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(movies.movies, id: \.posterPath) { title in
-                            NavigationLink(destination: OverviewView(title: title.title!, overview: title.overview!, posterPath: title.posterPath, voteAverage: title.voteAverage!, releaseDate: overviewViewModel.formatDate(date: title.releaseDate!))) {
+                            NavigationLink(destination:   OverviewView(title: title.title!, overview: title.overview!, posterPath: title.posterPath, voteAverage: title.voteAverage!, releaseDate:   overviewViewModel.formatDate(date: title.releaseDate!))) {
                             CardView(title: title.title!, posterPath: title.posterPath)
                                 .frame(height: height)
                             }

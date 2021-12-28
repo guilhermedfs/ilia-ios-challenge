@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D27F83B277B71DD00922B13 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27F83A277B71DD00922B13 /* MoviesViewModel.swift */; };
 		7DAF4BDF277A64EF009FFEE5 /* Desafio3SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4BDE277A64EF009FFEE5 /* Desafio3SwiftUIApp.swift */; };
 		7DAF4BE3277A64F0009FFEE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF4BE2277A64F0009FFEE5 /* Assets.xcassets */; };
 		7DAF4BE6277A64F0009FFEE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF4BE5277A64F0009FFEE5 /* Preview Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		7DAF4BF6277A654A009FFEE5 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4BF1277A654A009FFEE5 /* OverviewView.swift */; };
 		7DAF4BF7277A654A009FFEE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4BF2277A654A009FFEE5 /* ContentView.swift */; };
 		7DAF4BF9277A6610009FFEE5 /* MovieOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4BF8277A6610009FFEE5 /* MovieOverviewViewModel.swift */; };
-		7DAF4BFD277A665A009FFEE5 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4BFC277A665A009FFEE5 /* MoviesViewModel.swift */; };
 		7DAF4C01277A667F009FFEE5 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4BFE277A667F009FFEE5 /* Dates.swift */; };
 		7DAF4C02277A667F009FFEE5 /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4BFF277A667F009FFEE5 /* MovieResult.swift */; };
 		7DAF4C03277A667F009FFEE5 /* MoviesOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4C00277A667F009FFEE5 /* MoviesOverview.swift */; };
@@ -26,16 +26,15 @@
 
 /* Begin PBXFileReference section */
 		48E71488438C538E77DBBF69 /* Pods_Desafio3SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio3SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D27F83A277B71DD00922B13 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		7DAF4BDB277A64EF009FFEE5 /* Desafio3SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Desafio3SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAF4BDE277A64EF009FFEE5 /* Desafio3SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio3SwiftUIApp.swift; sourceTree = "<group>"; };
 		7DAF4BE2277A64F0009FFEE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DAF4BE5277A64F0009FFEE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7DAF4BEF277A654A009FFEE5 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		7DAF4BF0277A654A009FFEE5 /* Desafio3_SwiftUIApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Desafio3_SwiftUIApp.swift; sourceTree = "<group>"; };
 		7DAF4BF1277A654A009FFEE5 /* OverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		7DAF4BF2277A654A009FFEE5 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7DAF4BF8277A6610009FFEE5 /* MovieOverviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieOverviewViewModel.swift; sourceTree = "<group>"; };
-		7DAF4BFC277A665A009FFEE5 /* MoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = "../../../Documentos - MacBook Air de Guilherme/GitHub/ilia-ios-challenge/Desafio 3 - XIB/Desafio 3(CII-3)/Sources/Scenes/MoviesScreen/ViewModel/MoviesViewModel.swift"; sourceTree = "<group>"; };
 		7DAF4BFE277A667F009FFEE5 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		7DAF4BFF277A667F009FFEE5 /* MovieResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
 		7DAF4C00277A667F009FFEE5 /* MoviesOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesOverview.swift; sourceTree = "<group>"; };
@@ -75,6 +74,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7D27F838277B71A100922B13 /* Base Structures */ = {
+			isa = PBXGroup;
+			children = (
+				7DAF4BEF277A654A009FFEE5 /* CardView.swift */,
+			);
+			path = "Base Structures";
+			sourceTree = "<group>";
+		};
+		7D27F839277B71C800922B13 /* MoviesScene */ = {
+			isa = PBXGroup;
+			children = (
+				7DAF4C0A277A66D1009FFEE5 /* MovieData.swift */,
+				7D27F83A277B71DD00922B13 /* MoviesViewModel.swift */,
+				7DAF4BF2277A654A009FFEE5 /* ContentView.swift */,
+			);
+			path = MoviesScene;
+			sourceTree = "<group>";
+		};
+		7D27F83C277B71FE00922B13 /* MovieOverviewScene */ = {
+			isa = PBXGroup;
+			children = (
+				7DAF4BF1277A654A009FFEE5 /* OverviewView.swift */,
+				7DAF4BF8277A6610009FFEE5 /* MovieOverviewViewModel.swift */,
+			);
+			path = MovieOverviewScene;
+			sourceTree = "<group>";
+		};
 		7DAF4BD2277A64EF009FFEE5 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +122,7 @@
 		7DAF4BDD277A64EF009FFEE5 /* Desafio3SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				7D27F838277B71A100922B13 /* Base Structures */,
 				7DAF4BEC277A654A009FFEE5 /* API */,
 				7DAF4BF3277A654A009FFEE5 /* Extensions */,
 				7DAF4BEE277A654A009FFEE5 /* Scenes */,
@@ -136,13 +163,8 @@
 		7DAF4BEE277A654A009FFEE5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				7DAF4C0A277A66D1009FFEE5 /* MovieData.swift */,
-				7DAF4BEF277A654A009FFEE5 /* CardView.swift */,
-				7DAF4BF0277A654A009FFEE5 /* Desafio3_SwiftUIApp.swift */,
-				7DAF4BF8277A6610009FFEE5 /* MovieOverviewViewModel.swift */,
-				7DAF4BFC277A665A009FFEE5 /* MoviesViewModel.swift */,
-				7DAF4BF1277A654A009FFEE5 /* OverviewView.swift */,
-				7DAF4BF2277A654A009FFEE5 /* ContentView.swift */,
+				7D27F83C277B71FE00922B13 /* MovieOverviewScene */,
+				7D27F839277B71C800922B13 /* MoviesScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -275,7 +297,7 @@
 				7DAF4BF4277A654A009FFEE5 /* CardView.swift in Sources */,
 				7DAF4BF6277A654A009FFEE5 /* OverviewView.swift in Sources */,
 				7DAF4C02277A667F009FFEE5 /* MovieResult.swift in Sources */,
-				7DAF4BFD277A665A009FFEE5 /* MoviesViewModel.swift in Sources */,
+				7D27F83B277B71DD00922B13 /* MoviesViewModel.swift in Sources */,
 				7DAF4BF9277A6610009FFEE5 /* MovieOverviewViewModel.swift in Sources */,
 				7DAF4BDF277A64EF009FFEE5 /* Desafio3SwiftUIApp.swift in Sources */,
 				7DAF4C0B277A66D1009FFEE5 /* MovieData.swift in Sources */,
