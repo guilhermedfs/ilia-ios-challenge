@@ -22,7 +22,7 @@ final class MoviesViewModel: ObservableObject {
                 let user = try! JSONDecoder().decode(MoviesOverview.self, from: response.data)
                 let data = user.results
                 self.movieData.maxPage = user.totalPages
-                self.movies = data
+                self.movies += data
                 break
             case .failure(let error):
                 print(error)

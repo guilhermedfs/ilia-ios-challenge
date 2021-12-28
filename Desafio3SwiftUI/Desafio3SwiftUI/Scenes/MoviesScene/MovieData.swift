@@ -34,3 +34,8 @@ class MovieData {
         self._currentPage = currentPage
     }
 }
+
+struct Movies: Identifiable {
+    let id: UUID
+    let movies: MovieResult
+}
