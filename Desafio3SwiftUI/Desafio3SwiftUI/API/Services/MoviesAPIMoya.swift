@@ -57,7 +57,7 @@ extension MovieAPI: TargetType {
         case .upcomingMovies(let page):
             var parameters = [String:Any]()
             parameters["api_key"] = API_KEY
-            parameters["language"] = "pt-BR"
+            parameters["language"] = "en-US"
             parameters["page"] = "\(page)"
             return parameters
         case .popularMovies(let page):

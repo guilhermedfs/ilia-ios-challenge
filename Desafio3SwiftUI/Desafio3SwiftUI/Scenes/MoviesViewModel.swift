@@ -7,13 +7,14 @@
 
 import Foundation
 import Moya
+import RxCocoa
+import RxSwift
 
-final class MoviesViewModel: ObservableObject {
-    
-    @Published var movies = [MovieResult]()
-    @Published var newUrl: String = ""
+class MoviesViewModel {
+    var movies = PublishSubject<[MovieResult]>()
     let movieProvider = MoyaProvider<MovieAPI>()
-    var movieData = MovieData(maxPage: 20, currentPage: 1)
+    var changePage = PublishSubject<Int>()
+    var movieData = MovieData()
     
     func fetchData() {
         movieProvider.request(.upcomingMovies(page: movieData.currentPage)) { (result) in
@@ -22,16 +23,11 @@ final class MoviesViewModel: ObservableObject {
                 let user = try! JSONDecoder().decode(MoviesOverview.self, from: response.data)
                 let data = user.results
                 self.movieData.maxPage = user.totalPages
-                self.movies = data
+                self.movies.onNext(data)
                 break
             case .failure(let error):
                 print(error)
             }
-        }
-        
-        func getImageLink(url: String) -> String {
-            newUrl = "https://image.tmdb.org/t/p/w342/\(String(url))"
-            return url
         }
     }
     
@@ -40,7 +36,6 @@ final class MoviesViewModel: ObservableObject {
             return
         }
         movieData.currentPage += 1
-        print(movieData.currentPage)
         fetchData()
     }
 }

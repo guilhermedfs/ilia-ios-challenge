@@ -10,29 +10,11 @@ import Moya
 import SwiftUI
 
 class MovieOverviewViewModel: ObservableObject {
-    
-    let imageProvider = MoyaProvider<ImagesAPI>()
-    @Published var url: String = ""
+        @Published var url: String = ""
     
     func setImageLink(url: String) -> String {
         let url = "https://image.tmdb.org/t/p/w342/\(String(url))"
         return url
-    }
-    
-    func loadImage(url: String, completionHandler: @escaping (Data?) -> Void) {
-        imageProvider.request(.imageLink(imageLink: setImageLink(url: url))) {
-            (result) in
-            switch result {
-            case .success(let response):
-                let image = response.data
-                DispatchQueue.main.async {
-                    completionHandler(image)
-                }
-                break
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
     
     func formatDate(date: String) -> String {
