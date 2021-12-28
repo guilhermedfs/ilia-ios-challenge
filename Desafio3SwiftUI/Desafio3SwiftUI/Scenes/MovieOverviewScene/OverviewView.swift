@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ImageGetter
 
 struct OverviewView: View {
     let title: String
@@ -14,19 +15,14 @@ struct OverviewView: View {
     let voteAverage: Double
     let releaseDate: String
     var overviewViewModel = MovieOverviewViewModel()
+    
     var path: String {
         return posterPath ?? ""
     }
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .center) {
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w342/\(path)")) { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 150, maxHeight: 250)
-                } placeholder: {
-                    ProgressView()
-                }
+                ImageGetter(path: posterPath)
                 Text(title)
                     .font(.title2.bold())
                     .padding(20)

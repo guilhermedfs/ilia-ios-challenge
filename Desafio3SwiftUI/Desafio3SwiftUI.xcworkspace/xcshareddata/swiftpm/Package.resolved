@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ImageGetter",
+        "repositoryURL": "git@github.com:guilhermedfs/ImageGetter.git",
+        "state": {
+          "branch": "main",
+          "revision": "37f87fdbee0685318df552cdc8078b4b7f83731b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

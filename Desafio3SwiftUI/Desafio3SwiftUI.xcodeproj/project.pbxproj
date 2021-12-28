@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7D27F83B277B71DD00922B13 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27F83A277B71DD00922B13 /* MoviesViewModel.swift */; };
+		7D27F83E277B87EF00922B13 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27F83D277B87EF00922B13 /* Poster.swift */; };
+		7D27F841277B93A700922B13 /* ImageGetter in Frameworks */ = {isa = PBXBuildFile; productRef = 7D27F840277B93A700922B13 /* ImageGetter */; };
 		7DAF4BDF277A64EF009FFEE5 /* Desafio3SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF4BDE277A64EF009FFEE5 /* Desafio3SwiftUIApp.swift */; };
 		7DAF4BE3277A64F0009FFEE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF4BE2277A64F0009FFEE5 /* Assets.xcassets */; };
 		7DAF4BE6277A64F0009FFEE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF4BE5277A64F0009FFEE5 /* Preview Assets.xcassets */; };
@@ -27,6 +29,7 @@
 /* Begin PBXFileReference section */
 		48E71488438C538E77DBBF69 /* Pods_Desafio3SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio3SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D27F83A277B71DD00922B13 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		7D27F83D277B87EF00922B13 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 		7DAF4BDB277A64EF009FFEE5 /* Desafio3SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Desafio3SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAF4BDE277A64EF009FFEE5 /* Desafio3SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desafio3SwiftUIApp.swift; sourceTree = "<group>"; };
 		7DAF4BE2277A64F0009FFEE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4C7001765E1E3877348D1AB /* Pods_Desafio3SwiftUI.framework in Frameworks */,
+				7D27F841277B93A700922B13 /* ImageGetter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				7DAF4BEF277A654A009FFEE5 /* CardView.swift */,
+				7D27F83D277B87EF00922B13 /* Poster.swift */,
 			);
 			path = "Base Structures";
 			sourceTree = "<group>";
@@ -195,6 +200,9 @@
 			dependencies = (
 			);
 			name = Desafio3SwiftUI;
+			packageProductDependencies = (
+				7D27F840277B93A700922B13 /* ImageGetter */,
+			);
 			productName = Desafio3SwiftUI;
 			productReference = 7DAF4BDB277A64EF009FFEE5 /* Desafio3SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +231,9 @@
 				Base,
 			);
 			mainGroup = 7DAF4BD2277A64EF009FFEE5;
+			packageReferences = (
+				7D27F83F277B93A700922B13 /* XCRemoteSwiftPackageReference "ImageGetter" */,
+			);
 			productRefGroup = 7DAF4BDC277A64EF009FFEE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,6 +308,7 @@
 				7DAF4BF4277A654A009FFEE5 /* CardView.swift in Sources */,
 				7DAF4BF6277A654A009FFEE5 /* OverviewView.swift in Sources */,
 				7DAF4C02277A667F009FFEE5 /* MovieResult.swift in Sources */,
+				7D27F83E277B87EF00922B13 /* Poster.swift in Sources */,
 				7D27F83B277B71DD00922B13 /* MoviesViewModel.swift in Sources */,
 				7DAF4BF9277A6610009FFEE5 /* MovieOverviewViewModel.swift in Sources */,
 				7DAF4BDF277A64EF009FFEE5 /* Desafio3SwiftUIApp.swift in Sources */,
@@ -509,6 +521,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D27F83F277B93A700922B13 /* XCRemoteSwiftPackageReference "ImageGetter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:guilhermedfs/ImageGetter.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D27F840277B93A700922B13 /* ImageGetter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D27F83F277B93A700922B13 /* XCRemoteSwiftPackageReference "ImageGetter" */;
+			productName = ImageGetter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7DAF4BD3277A64EF009FFEE5 /* Project object */;
 }

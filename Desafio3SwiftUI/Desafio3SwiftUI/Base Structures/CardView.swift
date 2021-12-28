@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ImageGetter
 
 struct CardView: View {
     let title: String
@@ -15,13 +16,7 @@ struct CardView: View {
     }
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w342/\(path)")) { image in
-                image.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 150, maxHeight: 250)
-            } placeholder: {
-                ProgressView()
-            }
+            ImageGetter(path: path)
             Text(title)
                 .font(.title3.bold())
                 .lineLimit(1)
