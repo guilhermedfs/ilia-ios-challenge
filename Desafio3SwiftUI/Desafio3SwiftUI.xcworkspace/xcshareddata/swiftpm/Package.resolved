@@ -9,6 +9,15 @@
           "revision": "37f87fdbee0685318df552cdc8078b4b7f83731b",
           "version": null
         }
+      },
+      {
+        "package": "NavBarAppearance",
+        "repositoryURL": "git@github.com:guilhermedfs/NavBarAppearance.git",
+        "state": {
+          "branch": "main",
+          "revision": "82202d74f13c1d0c4e97833676057893c4d49bf8",
+          "version": null
+        }
       }
     ]
   },

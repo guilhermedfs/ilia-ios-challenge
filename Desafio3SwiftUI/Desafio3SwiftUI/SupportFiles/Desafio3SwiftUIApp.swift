@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Desafio3SwiftUIApp: App {
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            InitialView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

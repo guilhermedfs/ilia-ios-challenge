@@ -10,7 +10,7 @@ import Moya
 import SwiftUI
 
 class MovieOverviewViewModel: ObservableObject {
-        @Published var url: String = ""
+    @Published var url: String = ""
     
     func setImageLink(url: String) -> String {
         let url = "https://image.tmdb.org/t/p/w342/\(String(url))"
@@ -37,4 +37,13 @@ class MovieOverviewViewModel: ObservableObject {
             return Color.green
         }
     }
+    
+    func isSaved(items: FetchedResults<FavoritesMovies>, title: String) -> Bool {
+        if items.contains(where: {$0.name == title}) {
+            return true
+        }
+        
+        return false
+    }
+    
 }

@@ -11,6 +11,7 @@ import Moya
 enum MovieAPI {
     case upcomingMovies(page: Int)
     case popularMovies(page: Int)
+    case searchMovies(title: String)
 }
 
 extension MovieAPI: TargetType {
@@ -29,12 +30,14 @@ extension MovieAPI: TargetType {
             return "movie/upcoming"
         case .popularMovies:
             return "movie/popular"
+        case .searchMovies:
+            return "search/movie"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .upcomingMovies, .popularMovies:
+        case .upcomingMovies, .popularMovies, .searchMovies:
             return .get
         }
     }
@@ -53,18 +56,24 @@ extension MovieAPI: TargetType {
     }
     
     var parameters: [String : Any] {
+        var parameters = [String:Any]()
+
         switch self {
         case .upcomingMovies(let page):
-            var parameters = [String:Any]()
             parameters["api_key"] = API_KEY
             parameters["language"] = "en-US"
             parameters["page"] = "\(page)"
             return parameters
         case .popularMovies(let page):
-            var parameters = [String:Any]()
             parameters["api_key"] = API_KEY
-            parameters["language"] = "pt-BR"
+            parameters["language"] = "en-US"
             parameters["page"] = "\(page)"
+            return parameters
+        case .searchMovies(title: let title):
+            parameters["api_key"] = API_KEY
+            parameters["language"] = "en-US"
+            parameters["page"] = "1"
+            parameters["query"] = title
             return parameters
         }
     }

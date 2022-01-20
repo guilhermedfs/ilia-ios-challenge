@@ -15,7 +15,13 @@ struct OverviewView: View {
     let voteAverage: Double
     let releaseDate: String
     var overviewViewModel = MovieOverviewViewModel()
-    
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    @FetchRequest(
+        entity: FavoritesMovies.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \FavoritesMovies.imagePath, ascending: false)])
+    var items: FetchedResults<FavoritesMovies>
+
     var path: String {
         return posterPath ?? ""
     }
@@ -41,6 +47,28 @@ struct OverviewView: View {
                     .foregroundColor(overviewViewModel.getTextColor(average: voteAverage))
             }
             .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                let isSaved = overviewViewModel.isSaved(items: items, title: title)
+                Button(isSaved ? "Delete" : "Save") {
+                    let save = FavoritesMovies(context: managedObjectContext)
+                    
+                    if isSaved {
+                        PersistenceController.shared.delete(title)
+                        save.objectWillChange.send()
+                    } else {
+                        save.name = title
+                        save.resume = overview
+                        save.imagePath = posterPath
+                        save.releaseDate = releaseDate
+                        save.voteAverage = voteAverage
+                        PersistenceController.shared.save()
+                        save.objectWillChange.send()
+                    }
+                }
+                .foregroundColor(.red)
+            }
         }
     }
 }
