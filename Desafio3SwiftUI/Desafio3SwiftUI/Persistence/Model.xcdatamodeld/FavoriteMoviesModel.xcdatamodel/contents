@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="FavoritesMovies" representedClassName="FavoritesMovies" syncable="YES">
+    <entity name="FavoritesMovies" representedClassName=".FavoritesMovies" syncable="YES" codeGenerationType="class">
         <attribute name="imagePath" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="releaseDate" optional="YES" attributeType="String"/>
         <attribute name="resume" optional="YES" attributeType="String"/>
         <attribute name="voteAverage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MoviesNotes" inverseName="ofMovie" inverseEntity="MoviesNotes"/>
+    </entity>
+    <entity name="MoviesNotes" representedClassName=".MoviesNotes" syncable="YES" codeGenerationType="class">
+        <attribute name="noted" optional="YES" attributeType="String"/>
+        <relationship name="ofMovie" maxCount="1" deletionRule="Nullify" destinationEntity="FavoritesMovies" inverseName="notes" inverseEntity="FavoritesMovies"/>
     </entity>
     <elements>
-        <element name="FavoritesMovies" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="FavoritesMovies" positionX="199.10546875" positionY="20.73046875" width="128" height="119"/>
+        <element name="MoviesNotes" positionX="-63" positionY="18" width="128" height="59"/>
     </elements>
 </model>

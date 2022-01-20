@@ -51,23 +51,42 @@ struct OverviewView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 let isSaved = overviewViewModel.isSaved(items: items, title: title)
-                Button(isSaved ? "Delete" : "Save") {
-                    let save = FavoritesMovies(context: managedObjectContext)
-                    
+                HStack {
                     if isSaved {
-                        PersistenceController.shared.delete(title)
-                        save.objectWillChange.send()
-                    } else {
-                        save.name = title
-                        save.resume = overview
-                        save.imagePath = posterPath
-                        save.releaseDate = releaseDate
-                        save.voteAverage = voteAverage
-                        PersistenceController.shared.save()
-                        save.objectWillChange.send()
+                        NavigationLink(destination: NotesView(title: title)) {
+                            Image(systemName: "note.text")
+                                .foregroundColor(.yellow)
+                        }
                     }
+                    Button {
+                        let save = FavoritesMovies(context: managedObjectContext)
+                        if isSaved {
+                            PersistenceController.shared.delete(title)
+                            save.objectWillChange.send()
+                        } else {
+                            save.name = title
+                            save.resume = overview
+                            save.imagePath = posterPath
+                            save.releaseDate = releaseDate
+                            save.voteAverage = voteAverage
+                            let movieNoteTest = MoviesNotes(context: managedObjectContext)
+                            movieNoteTest.noted = "Testing"
+                            save.addToNotes(movieNoteTest)
+                            let movieNoteTest2 = MoviesNotes(context: managedObjectContext)
+                            movieNoteTest2.noted = "Testing 2"
+                            save.addToNotes(movieNoteTest2)
+                            PersistenceController.shared.save()
+                            save.objectWillChange.send()
+                        }
+                    } label: {
+                        if isSaved {
+                            Image(systemName: "trash.fill")
+                        } else {
+                            Image(systemName: "square.and.arrow.down.fill")
+                        }
+                    }
+                    .foregroundColor(.red)
                 }
-                .foregroundColor(.red)
             }
         }
     }

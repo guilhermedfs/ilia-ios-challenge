@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct FavoritesMoviesView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     @FetchRequest(
         entity: FavoritesMovies.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \FavoritesMovies.name, ascending: true)], predicate: NSPredicate(format: "name != %@", ""))
@@ -28,12 +29,15 @@ struct FavoritesMoviesView: View {
         NavigationView {
             LazyVGrid(columns: columns, spacing: 16) {
                 ForEach(0..<items.count, id: \.self) { count in
-                    NavigationLink(destination: OverviewView(title: items[count].name ?? "", overview: items[count].resume ?? "", posterPath: items[count].imagePath ?? "", voteAverage: items[count].voteAverage , releaseDate: items[count].releaseDate ?? ""), label: {
-                        CardView(title: items[count].name ?? "", posterPath: items[count].imagePath ?? "")
-                            .frame(height: height)
-                    })
+                    withAnimation {
+                        NavigationLink(destination: OverviewView(title: items[count].name ?? "", overview: items[count].resume ?? "", posterPath: items[count].imagePath ?? "", voteAverage: items[count].voteAverage , releaseDate: items[count].releaseDate ?? ""), label: {
+                            CardView(title: items[count].name ?? "", posterPath: items[count].imagePath ?? "")
+                                .frame(height: height)
+                        })
+                    }
                 }
             }
+            .navigationTitle("Movies")
         }
         .onAppear {
             reload.toggle()
