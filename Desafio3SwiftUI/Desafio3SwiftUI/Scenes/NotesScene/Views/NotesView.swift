@@ -26,6 +26,7 @@ struct NotesView: View {
                 TextEditor(text: $viewModel.model.note)
                     .cornerRadius(20)
                     .padding()
+                    .font(.custom("Avenir Next", size: 18, relativeTo: .body))
                     .onChange(of: viewModel.model.note) { newValue in
                         viewModel.saveNotes(title: title, note: viewModel.model.note, context: managedObjectContext)
                     }

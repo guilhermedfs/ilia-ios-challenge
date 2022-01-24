@@ -11,64 +11,71 @@ import ImageGetter
 struct OverviewView: View {
     var overviewViewModel: MovieOverviewViewModel
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    
     @FetchRequest(
         entity: FavoritesMovies.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \FavoritesMovies.imagePath, ascending: false)])
     var items: FetchedResults<FavoritesMovies>
-
+    
     var path: String {
         return overviewViewModel.overviewData.posterPath ?? ""
     }
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 10) {
             VStack(alignment: .center) {
                 ImageGetter(path: path)
+                    .padding(.top, 10)
                 Text(overviewViewModel.overviewData.title)
                     .font(.title2.bold())
                     .padding(20)
-                Text(overviewViewModel.overviewData.overview)
-                    .font(.system(size: 22))
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                ScrollView {
+                    Text(overviewViewModel.overviewData.overview)
+                        .font(.body)
+                        .padding(.horizontal)
+                }
             }
+            
             Spacer()
-            Section {
+            
+            VStack(alignment: .leading, spacing: 0) {
                 Text("Release date: ")
                     .fontWeight(.bold) +
-                Text("\(overviewViewModel.overviewData.releaseDate)")
+                Text("\(overviewViewModel.formatDate(date: overviewViewModel.overviewData.releaseDate))")
                 Text("Vote average: ")
                     .fontWeight(.bold) +
                 Text("\(String(format: "%.1f", overviewViewModel.overviewData.voteAverage))")
                     .foregroundColor(overviewViewModel.getTextColor(average: overviewViewModel.overviewData.voteAverage))
             }
-            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                let isSaved = overviewViewModel.isSaved(items: items, title: overviewViewModel.overviewData.title)
-                HStack {
-                    if isSaved {
-                        NavigationLink(destination: NotesView(title: overviewViewModel.overviewData.title)) {
-                            Image(systemName: "note.text")
-                                .foregroundColor(.yellow)
-                        }
-                    }
-                    Button {
+            .padding(.leading)
+            .padding(.bottom)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    let isSaved = overviewViewModel.isSaved(items: items, title: overviewViewModel.overviewData.title)
+                    HStack {
                         if isSaved {
-                            overviewViewModel.unfavoriteMovie(context: managedObjectContext)
-                        } else {
-                            overviewViewModel.favoriteMovie(context: managedObjectContext)
+                            NavigationLink(destination: NotesView(title: overviewViewModel.overviewData.title)) {
+                                Image(systemName: "note.text")
+                                    .foregroundColor(.yellow)
+                            }
                         }
-                    } label: {
-                        if isSaved {
-                            Image(systemName: "star.fill")
-                        } else {
-                            Image(systemName: "star")
+                        Button {
+                            if isSaved {
+                                overviewViewModel.unfavoriteMovie(context: managedObjectContext)
+                            } else {
+                                overviewViewModel.favoriteMovie(context: managedObjectContext)
+                            }
+                        } label: {
+                            if isSaved {
+                                Image(systemName: "star.fill")
+                            } else {
+                                Image(systemName: "star")
+                            }
                         }
+                        .foregroundColor(.red)
                     }
-                    .foregroundColor(.red)
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

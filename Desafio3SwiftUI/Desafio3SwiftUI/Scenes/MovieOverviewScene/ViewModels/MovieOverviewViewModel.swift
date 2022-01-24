@@ -68,7 +68,6 @@ class MovieOverviewViewModel: ObservableObject {
         save.imagePath = overviewData.posterPath
         save.releaseDate = overviewData.releaseDate
         save.voteAverage = overviewData.voteAverage
-        note.noted = ""
         note.movieTitle = overviewData.title
         save.notes = note
         
