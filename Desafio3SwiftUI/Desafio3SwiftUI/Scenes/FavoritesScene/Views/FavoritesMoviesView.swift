@@ -13,7 +13,8 @@ struct FavoritesMoviesView: View {
 
     @FetchRequest(
         entity: FavoritesMovies.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \FavoritesMovies.name, ascending: true)], predicate: NSPredicate(format: "name != %@", ""))
+        sortDescriptors: [NSSortDescriptor(keyPath: \FavoritesMovies.name, ascending: true)],
+        predicate: NSPredicate(format: "name != nil"))
     var items: FetchedResults<FavoritesMovies>
     
     @State private var reload: Bool = false
@@ -27,15 +28,18 @@ struct FavoritesMoviesView: View {
     
     var body: some View {
         NavigationView {
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(0..<items.count, id: \.self) { count in
-                    withAnimation {
-                        NavigationLink(destination: OverviewView(title: items[count].name ?? "", overview: items[count].resume ?? "", posterPath: items[count].imagePath ?? "", voteAverage: items[count].voteAverage , releaseDate: items[count].releaseDate ?? ""), label: {
-                            CardView(title: items[count].name ?? "", posterPath: items[count].imagePath ?? "")
-                                .frame(height: height)
-                        })
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(items) { item in
+                        withAnimation {
+                            NavigationLink(destination: OverviewView(overviewViewModel: MovieOverviewViewModel(overviewData: OverviewData(title: item.name ?? "", overview: item.resume ?? "", posterPath: item.imagePath, voteAverage: item.voteAverage, releaseDate: item.releaseDate ?? ""))), label: {
+                                CardView(title: item.name ?? "", posterPath: item.imagePath ?? "")
+                                    .foregroundColor(.black)
+                            })
+                        }
                     }
                 }
+                .padding(.top, 18)
             }
             .navigationTitle("Movies")
         }

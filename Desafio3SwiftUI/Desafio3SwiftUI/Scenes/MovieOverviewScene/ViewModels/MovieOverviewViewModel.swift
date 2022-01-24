@@ -8,9 +8,15 @@
 import Foundation
 import Moya
 import SwiftUI
+import CoreData
 
 class MovieOverviewViewModel: ObservableObject {
     @Published var url: String = ""
+    @Published var overviewData: OverviewData
+    
+    init(overviewData: OverviewData) {
+        self.overviewData = overviewData
+    }
     
     func setImageLink(url: String) -> String {
         let url = "https://image.tmdb.org/t/p/w342/\(String(url))"
@@ -44,6 +50,30 @@ class MovieOverviewViewModel: ObservableObject {
         }
         
         return false
+    }
+    
+    func unfavoriteMovie(context: NSManagedObjectContext) {
+        let save = FavoritesMovies(context: context)
+        
+        PersistenceController.shared.delete(overviewData.title)
+        save.objectWillChange.send()
+    }
+    
+    func favoriteMovie(context: NSManagedObjectContext) {
+        let save = FavoritesMovies(context: context)
+        let note = MoviesNotes(context: context)
+        
+        save.name = overviewData.title
+        save.resume = overviewData.overview
+        save.imagePath = overviewData.posterPath
+        save.releaseDate = overviewData.releaseDate
+        save.voteAverage = overviewData.voteAverage
+        note.noted = ""
+        note.movieTitle = overviewData.title
+        save.notes = note
+        
+        PersistenceController.shared.save()
+        save.objectWillChange.send()
     }
     
 }

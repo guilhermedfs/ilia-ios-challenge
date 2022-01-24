@@ -16,14 +16,13 @@ struct MoviesListView: View {
     let height: CGFloat = 250
     
     let movies: MoviesViewModel
-    let overviewViewModel: MovieOverviewViewModel
     let queryType: QueryTypes
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 16) {
             ForEach(movies.movies.indices, id: \.self) { movieIndex in
                 let mv = movies.movies[movieIndex]
-                NavigationLink(destination:  OverviewView(title: mv.title!, overview: mv.overview!, posterPath: mv.posterPath, voteAverage: mv.voteAverage!, releaseDate:   overviewViewModel.formatDate(date: mv.releaseDate!))) {
+                NavigationLink(destination:  OverviewView(overviewViewModel: MovieOverviewViewModel(overviewData: OverviewData(title: mv.title ?? "", overview: mv.overview ?? "", posterPath: mv.posterPath, voteAverage: mv.voteAverage ?? 0.0, releaseDate: mv.releaseDate ?? "")))) {
                     CardView(title: mv.title!, posterPath: mv.posterPath)
                         .frame(height: height)
                         .onAppear {

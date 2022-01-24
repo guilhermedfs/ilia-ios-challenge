@@ -9,49 +9,28 @@ import Foundation
 import CoreData
 
 class NotesViewModel: ObservableObject {
-    @Published var model = NotesModel(notes: [])
+    @Published var model = NotesModel(note: "")
     
     func saveNotes(title: String, note: String, context: NSManagedObjectContext) {
-        let request: NSFetchRequest<FavoritesMovies> = FavoritesMovies.fetchRequest()
-        request.predicate = NSPredicate(format: "name == %@", title)
-        let notation = MoviesNotes(context: context)
-        notation.noted = note
+        let request: NSFetchRequest<MoviesNotes> = MoviesNotes.fetchRequest()
+        request.predicate = NSPredicate(format: "movieTitle == %@", title)
         
         do {
             let object = try context.fetch(request)
             if !(object.isEmpty) {
-                object.first?.addToNotes(notation)
-                model.notes.append(note)
+                object.first?.noted = note
+                model.note = note
             }
         } catch {
             
         }
-      
+        
         PersistenceController.shared.save()
     }
     
     func retrieveDataFromCore(title: String) {
         let notes = PersistenceController.shared.retrieveNotes(title)
-        let str = notes.map({String($0)})
-        model.notes = str
+        model.note = notes
     }
-    
-    func deleteNoteFromCore(title: String, note: String, context: NSManagedObjectContext) {
-        let request: NSFetchRequest<FavoritesMovies> = FavoritesMovies.fetchRequest()
-        request.predicate = NSPredicate(format: "name == %@", title)
-        let notation = MoviesNotes(context: context)
-        notation.noted = note
-        
-        do {
-            let object = try context.fetch(request)
-            if !(object.isEmpty) {
-                object.first?.removeFromNotes(notation)
-                model.notes.append(note)
-            }
-        } catch {
-            
-        }
-      
-        PersistenceController.shared.save()
-    }
+
 }

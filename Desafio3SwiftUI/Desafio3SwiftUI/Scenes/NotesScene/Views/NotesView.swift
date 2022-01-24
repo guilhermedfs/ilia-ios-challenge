@@ -17,56 +17,28 @@ struct NotesView: View {
     
     var navbarColor = Color(red: 0.071, green: 0.306, blue: 0.471) // #124e78
     @State private var note: String = ""
-    @State private var isEnabled: Bool = false
     @StateObject private var viewModel = NotesViewModel()
-    @State var animate = 0.0
     let title: String
     
     var body: some View {
         VStack {
-            if isEnabled {
-                TextField("Type your note", text: $note.animation())
-                        .padding([.leading,.trailing], 30)
-                        .padding(.top, 10)
-                        .padding()
-                        .textFieldStyle(.roundedBorder)
-                        .background(navbarColor)
-                        .onSubmit {
-                            viewModel.saveNotes(title: title, note: note, context: managedObjectContext)
-                        }
-            }
-            List {
-                ForEach(viewModel.model.notes, id: \.self) { note in
-                    HStack {
-                            Text(note)
-                                .padding(.top)
-                        Spacer()
-                        Button {
-                        } label: {
-                            Image(systemName: "minus.circle.fill")
-                                .foregroundColor(.red)
-                        }
+            Section {
+                TextEditor(text: $viewModel.model.note)
+                    .cornerRadius(20)
+                    .padding()
+                    .onChange(of: viewModel.model.note) { newValue in
+                        viewModel.saveNotes(title: title, note: viewModel.model.note, context: managedObjectContext)
                     }
-                }
-            }
-            .buttonStyle(PlainButtonStyle())
-        }
-        .toolbar {
-            Button {
-                withAnimation(.spring(), {
-                    isEnabled.toggle()
-                })
-            } label: {
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(.green)
             }
         }
         .onAppear {
-            DispatchQueue.main.async {
-                viewModel.retrieveDataFromCore(title: title)
-            }
+            viewModel.retrieveDataFromCore(title: title)
         }
-        .navigationTitle("Note")
+//        .onDisappear(perform: {
+//            viewModel.saveNotes(title: title, note: viewModel.model.note, context: managedObjectContext)
+//        })
+        .background(Color("background"))
+        .navigationTitle("Observation")
     }
 }
 

@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchView: View {
     @State var movieField: String = ""
     @ObservedObject var movies = MoviesViewModel()
-    @ObservedObject var overviewViewModel = MovieOverviewViewModel()
 
     var columns: [GridItem] = [
         GridItem(.adaptive(minimum: 120)),
@@ -30,7 +29,7 @@ struct SearchView: View {
             LazyVGrid(columns: columns, spacing: 16) {
                 ForEach(movies.searchResult.indices, id: \.self) { movieIndex in
                     let mv = movies.searchResult[movieIndex]
-                    NavigationLink(destination:  OverviewView(title: mv.title, overview: mv.overview, posterPath: mv.posterPath, voteAverage: mv.voteAverage, releaseDate:   overviewViewModel.formatDate(date: mv.releaseDate))) {
+                    NavigationLink(destination:  OverviewView(overviewViewModel: MovieOverviewViewModel(overviewData: OverviewData(title: mv.title , overview: mv.overview , posterPath: mv.posterPath ?? "", voteAverage: mv.voteAverage , releaseDate: mv.releaseDate )))) {
                         CardView(title: mv.title, posterPath: mv.posterPath)
                             .frame(height: height)
                     }

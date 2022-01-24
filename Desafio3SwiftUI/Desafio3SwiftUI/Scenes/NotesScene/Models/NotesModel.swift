@@ -8,5 +8,5 @@
 import Foundation
 
 struct NotesModel {
-    var notes: [String]
+    var note: String
 }

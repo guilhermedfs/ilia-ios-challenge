@@ -24,6 +24,7 @@ struct PersistenceController {
                 completion(nil)
             } catch {
                 completion(error)
+                print(error.localizedDescription)
             }
         }
     }
@@ -54,31 +55,23 @@ struct PersistenceController {
         }
      
     }
-    
-    func addNote(_ title: String, completion: @escaping (Error?) -> () = {_ in}) {
 
-    }
-    
-    func retrieveNotes(_ title: String, completion: @escaping (Error?) -> () = {_ in}) -> [String] {
-        let request: NSFetchRequest<FavoritesMovies> = FavoritesMovies.fetchRequest()
-        request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", title)
-        var strings: [String] = []
+    func retrieveNotes(_ title: String, completion: @escaping (Error?) -> () = {_ in}) -> String {
+        let request: NSFetchRequest<MoviesNotes> = MoviesNotes.fetchRequest()
+        request.predicate = NSPredicate(format: "movieTitle == %@", title)
         let context = container.viewContext
+        var note = ""
         do {
             let objects = try context.fetch(request)
-            let notes = objects.first?.notes as? Set<MoviesNotes>
-            
-            for note in notes! {
-                strings.append(note.noted!)
-            }
-            
-            return strings
+            guard let notes = objects.first?.noted else {return ""}
+            note = notes
+            return note
             
         } catch {
             print("error: \(error.localizedDescription)")
         }
         
-        return strings
+        return note
     }
     
 }

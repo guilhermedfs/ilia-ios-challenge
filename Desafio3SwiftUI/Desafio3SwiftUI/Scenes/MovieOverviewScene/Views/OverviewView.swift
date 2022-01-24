@@ -9,12 +9,7 @@ import SwiftUI
 import ImageGetter
 
 struct OverviewView: View {
-    let title: String
-    let overview: String
-    let posterPath: String?
-    let voteAverage: Double
-    let releaseDate: String
-    var overviewViewModel = MovieOverviewViewModel()
+    var overviewViewModel: MovieOverviewViewModel
     @Environment(\.managedObjectContext) var managedObjectContext
 
     @FetchRequest(
@@ -23,16 +18,16 @@ struct OverviewView: View {
     var items: FetchedResults<FavoritesMovies>
 
     var path: String {
-        return posterPath ?? ""
+        return overviewViewModel.overviewData.posterPath ?? ""
     }
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .center) {
-                ImageGetter(path: posterPath)
-                Text(title)
+                ImageGetter(path: path)
+                Text(overviewViewModel.overviewData.title)
                     .font(.title2.bold())
                     .padding(20)
-                Text(overview)
+                Text(overviewViewModel.overviewData.overview)
                     .font(.system(size: 22))
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
             }
@@ -40,49 +35,35 @@ struct OverviewView: View {
             Section {
                 Text("Release date: ")
                     .fontWeight(.bold) +
-                Text("\(releaseDate)")
+                Text("\(overviewViewModel.overviewData.releaseDate)")
                 Text("Vote average: ")
                     .fontWeight(.bold) +
-                Text("\(String(format: "%.1f", voteAverage))")
-                    .foregroundColor(overviewViewModel.getTextColor(average: voteAverage))
+                Text("\(String(format: "%.1f", overviewViewModel.overviewData.voteAverage))")
+                    .foregroundColor(overviewViewModel.getTextColor(average: overviewViewModel.overviewData.voteAverage))
             }
             .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                let isSaved = overviewViewModel.isSaved(items: items, title: title)
+                let isSaved = overviewViewModel.isSaved(items: items, title: overviewViewModel.overviewData.title)
                 HStack {
                     if isSaved {
-                        NavigationLink(destination: NotesView(title: title)) {
+                        NavigationLink(destination: NotesView(title: overviewViewModel.overviewData.title)) {
                             Image(systemName: "note.text")
                                 .foregroundColor(.yellow)
                         }
                     }
                     Button {
-                        let save = FavoritesMovies(context: managedObjectContext)
                         if isSaved {
-                            PersistenceController.shared.delete(title)
-                            save.objectWillChange.send()
+                            overviewViewModel.unfavoriteMovie(context: managedObjectContext)
                         } else {
-                            save.name = title
-                            save.resume = overview
-                            save.imagePath = posterPath
-                            save.releaseDate = releaseDate
-                            save.voteAverage = voteAverage
-                            let movieNoteTest = MoviesNotes(context: managedObjectContext)
-                            movieNoteTest.noted = "Testing"
-                            save.addToNotes(movieNoteTest)
-                            let movieNoteTest2 = MoviesNotes(context: managedObjectContext)
-                            movieNoteTest2.noted = "Testing 2"
-                            save.addToNotes(movieNoteTest2)
-                            PersistenceController.shared.save()
-                            save.objectWillChange.send()
+                            overviewViewModel.favoriteMovie(context: managedObjectContext)
                         }
                     } label: {
                         if isSaved {
-                            Image(systemName: "trash.fill")
+                            Image(systemName: "star.fill")
                         } else {
-                            Image(systemName: "square.and.arrow.down.fill")
+                            Image(systemName: "star")
                         }
                     }
                     .foregroundColor(.red)
@@ -92,8 +73,8 @@ struct OverviewView: View {
     }
 }
 
-struct OverviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        OverviewView(title: "Hello", overview: "nil", posterPath: "", voteAverage: 0, releaseDate: "")
-    }
-}
+//struct OverviewView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OverviewView(title: "Hello", overview: "nil", posterPath: "", voteAverage: 0, releaseDate: "", overviewViewModel: <#MovieOverviewViewModel#>)
+//    }
+//}

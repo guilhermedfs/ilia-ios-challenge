@@ -18,7 +18,6 @@ struct ContentView: View {
     
     // 3. Get mock cards data
     @ObservedObject var movies = MoviesViewModel()
-    @ObservedObject var overviewViewModel = MovieOverviewViewModel()
     @State var isPopoverPresented = false
     @State var isSearchPressed: Int? = nil
     
@@ -26,7 +25,7 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 // 4. Populate into grid
-                MoviesListView(movies: movies, overviewViewModel: overviewViewModel, queryType: .upcomingMovies)
+                MoviesListView(movies: movies, queryType: .upcomingMovies)
             }
             .onAppear {
                 self.movies.fetchData(queryType: .upcomingMovies, title: nil)
