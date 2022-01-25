@@ -8,16 +8,36 @@
 import SwiftUI
 
 struct InitialView: View {
+    @State private var selected = 0
+    @State private var movieSelec: Bool = false
     var body: some View {
-        TabView {
-            ContentView()
-                .tabItem {
-                    Label("Movies", systemImage: "tv.fill")
-                }
-            FavoritesMoviesView()
-                .tabItem {
-                    Label("Favorites", systemImage: "star.fill")
-                }
+        
+        ZStack {
+            TabView(selection: $selected) {
+                ContentView()
+                    .tabItem {
+                        Button {
+                            withAnimation {
+                                selected = 0
+                            }
+                        } label: {
+                            Label("Movies", systemImage: "tv.fill")
+                        }
+                    }
+                    .tag(0)
+
+                FavoritesMoviesView()
+                    .tabItem {
+                        Button {
+                            withAnimation {
+                                selected = 0
+                            }
+                        } label: {
+                            Label("Favorites", systemImage: "star.fill")
+                        }
+                    }
+                    .tag(1)
+            }
         }
     }
 }

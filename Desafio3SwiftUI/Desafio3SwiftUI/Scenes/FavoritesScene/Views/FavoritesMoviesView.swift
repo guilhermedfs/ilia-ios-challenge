@@ -31,12 +31,10 @@ struct FavoritesMoviesView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(items) { item in
-                        withAnimation {
                             NavigationLink(destination: OverviewView(overviewViewModel: MovieOverviewViewModel(overviewData: OverviewData(title: item.name ?? "", overview: item.resume ?? "", posterPath: item.imagePath, voteAverage: item.voteAverage, releaseDate: item.releaseDate ?? ""))), label: {
                                 CardView(title: item.name ?? "", posterPath: item.imagePath ?? "")
                                     .foregroundColor(.black)
                             })
-                        }
                     }
                 }
                 .padding(.top, 18)

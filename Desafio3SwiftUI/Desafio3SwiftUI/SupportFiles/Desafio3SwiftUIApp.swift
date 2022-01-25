@@ -13,7 +13,7 @@ struct Desafio3SwiftUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            InitialView()
+            PreLaunchView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

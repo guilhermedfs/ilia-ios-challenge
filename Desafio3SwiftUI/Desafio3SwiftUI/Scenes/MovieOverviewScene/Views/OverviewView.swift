@@ -16,15 +16,34 @@ struct OverviewView: View {
         entity: FavoritesMovies.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \FavoritesMovies.imagePath, ascending: false)])
     var items: FetchedResults<FavoritesMovies>
-    
+    @State private var saved: Bool = false
     var path: String {
         return overviewViewModel.overviewData.posterPath ?? ""
     }
+    private let transaction: Transaction = .init(animation: .linear)
+
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             VStack(alignment: .center) {
-                ImageGetter(path: path)
-                    .padding(.top, 10)
+                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w342/\(path)"), transaction: transaction) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .transition(.slide)
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(8)
+                            .frame(maxWidth: 160, maxHeight: 250)
+                    case .failure:
+                        Image(systemName: "xmark.icloud.fill")
+                    @unknown default:
+                        EmptyView()
+                    }
+                }
+                .padding(.top, 10)
+
                 Text(overviewViewModel.overviewData.title)
                     .font(.title2.bold())
                     .padding(20)
@@ -63,6 +82,9 @@ struct OverviewView: View {
                                 overviewViewModel.unfavoriteMovie(context: managedObjectContext)
                             } else {
                                 overviewViewModel.favoriteMovie(context: managedObjectContext)
+                                withAnimation(.interpolatingSpring(stiffness: 30, damping: 1), {
+                                    saved.toggle()
+                                })
                             }
                         } label: {
                             if isSaved {
@@ -76,6 +98,11 @@ struct OverviewView: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
+        }
+        .alert("Salvo!", isPresented: $saved) {
+            Button("Ok") {
+                saved = false
+            }
         }
     }
 }
