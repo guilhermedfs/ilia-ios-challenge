@@ -16,6 +16,7 @@ struct PreLaunchView: View {
     @State private var angle: Double = 360
     @State private var opacity: Double = 1
     @State private var scale: CGFloat = 1
+    @State private var offsetY: CGFloat = 0
     
     var body: some View {
         Group {
@@ -29,18 +30,25 @@ struct PreLaunchView: View {
                         .resizable()
                         .frame(width: 200, height: 200)
                         .foregroundColor(titleColor)
+                        .offset(x: 0, y: offsetY)
                         .rotation3DEffect(.degrees(angle), axis: (x: 1.0, y: 0.0, z: 0.0))
                         .scaleEffect(scale)
                 }
             }
         }
         .onAppear {
-            withAnimation(.easeOut(duration: 2)) {
+            withAnimation(.easeOut(duration: 1.30)) {
                 angle = 0
-                scale = 1
+                scale = 0.5
                 opacity = 0
             }
-            withAnimation(.linear.delay(2.30)) {
+            withAnimation(.linear.delay(1.40)) {
+                offsetY = -50
+            }
+            withAnimation(.linear.delay(1.80)) {
+                offsetY = 0
+            }
+            withAnimation(.spring().delay(2.30)) {
                 showMainView = true
             }
         }

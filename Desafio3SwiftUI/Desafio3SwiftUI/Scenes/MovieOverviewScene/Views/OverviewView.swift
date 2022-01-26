@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ImageGetter
 
 struct OverviewView: View {
     var overviewViewModel: MovieOverviewViewModel

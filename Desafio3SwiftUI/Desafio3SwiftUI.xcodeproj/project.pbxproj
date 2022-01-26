@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7D0181102798B70F002D26C1 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D01810F2798B70F002D26C1 /* InitialView.swift */; };
 		7D27F83B277B71DD00922B13 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27F83A277B71DD00922B13 /* MoviesViewModel.swift */; };
-		7D27F841277B93A700922B13 /* ImageGetter in Frameworks */ = {isa = PBXBuildFile; productRef = 7D27F840277B93A700922B13 /* ImageGetter */; };
 		7D5B801D277C9676009E594B /* NavBarAppearance in Frameworks */ = {isa = PBXBuildFile; productRef = 7D5B801C277C9676009E594B /* NavBarAppearance */; };
 		7D5CAC6C2799F17500E3111A /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CAC6B2799F17500E3111A /* NotesViewModel.swift */; };
 		7D5CAC6E279A12FC00E3111A /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CAC6D279A12FC00E3111A /* NotesModel.swift */; };
@@ -46,6 +45,7 @@
 		48E71488438C538E77DBBF69 /* Pods_Desafio3SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Desafio3SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D01810F2798B70F002D26C1 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		7D27F83A277B71DD00922B13 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		7D379C0127A1A4690009B03A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7D5CAC6B2799F17500E3111A /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		7D5CAC6D279A12FC00E3111A /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		7D69303D27A0A71E00857313 /* PreLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLaunchView.swift; sourceTree = "<group>"; };
@@ -86,7 +86,6 @@
 			files = (
 				C4C7001765E1E3877348D1AB /* Pods_Desafio3SwiftUI.framework in Frameworks */,
 				7D5B801D277C9676009E594B /* NavBarAppearance in Frameworks */,
-				7D27F841277B93A700922B13 /* ImageGetter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +342,7 @@
 		7DAF4BDD277A64EF009FFEE5 /* Desafio3SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				7D379C0127A1A4690009B03A /* Info.plist */,
 				7DAEF54127987A6C00DA0ABE /* Persistence */,
 				7D27F838277B71A100922B13 /* Base Structures */,
 				7DAF4BEC277A654A009FFEE5 /* API */,
@@ -424,7 +424,6 @@
 			);
 			name = Desafio3SwiftUI;
 			packageProductDependencies = (
-				7D27F840277B93A700922B13 /* ImageGetter */,
 				7D5B801C277C9676009E594B /* NavBarAppearance */,
 			);
 			productName = Desafio3SwiftUI;
@@ -456,7 +455,6 @@
 			);
 			mainGroup = 7DAF4BD2277A64EF009FFEE5;
 			packageReferences = (
-				7D27F83F277B93A700922B13 /* XCRemoteSwiftPackageReference "ImageGetter" */,
 				7D5B801B277C9676009E594B /* XCRemoteSwiftPackageReference "NavBarAppearance" */,
 			);
 			productRefGroup = 7DAF4BDC277A64EF009FFEE5 /* Products */;
@@ -690,9 +688,9 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_NO_COMMON_BLOCKS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Desafio3SwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -721,9 +719,9 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_NO_COMMON_BLOCKS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Desafio3SwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -763,14 +761,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7D27F83F277B93A700922B13 /* XCRemoteSwiftPackageReference "ImageGetter" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:guilhermedfs/ImageGetter.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		7D5B801B277C9676009E594B /* XCRemoteSwiftPackageReference "NavBarAppearance" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:guilhermedfs/NavBarAppearance.git";
@@ -782,11 +772,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7D27F840277B93A700922B13 /* ImageGetter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7D27F83F277B93A700922B13 /* XCRemoteSwiftPackageReference "ImageGetter" */;
-			productName = ImageGetter;
-		};
 		7D5B801C277C9676009E594B /* NavBarAppearance */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7D5B801B277C9676009E594B /* XCRemoteSwiftPackageReference "NavBarAppearance" */;

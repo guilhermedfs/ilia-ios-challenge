@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ImageGetter
 
 struct CardView: View {
     let title: String
